@@ -5,7 +5,7 @@
       <File FileName="Assets/MyScripts/FPSInputController.js" Line="1" Column="1" />
       <File FileName="Assets/MyScripts/SmoothFollow.js" Line="1" Column="1" />
       <File FileName="Assets/MyScripts/MouseLook.cs" Line="1" Column="1" />
-      <File FileName="Assets/MyScripts/ThirdPersonPlayer.cs" Line="15" Column="112" />
+      <File FileName="Assets/MyScripts/ThirdPersonPlayer.cs" Line="6" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\MyScripts\CharacterMotor.js" />
-     <Compile Include="Assets\MyScripts\CollectChocolate.js" />
+     <Compile Include="Assets\MyScripts\CollectItems.js" />
      <Compile Include="Assets\MyScripts\FPSInputController.js" />
      <Compile Include="Assets\MyScripts\SmoothFollow.js" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />

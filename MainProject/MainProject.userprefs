@@ -1,11 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyScripts/ThirdPersonPlayer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyScripts\CollectChocolate.js">
     <Files>
-      <File FileName="Assets/MyScripts/FPSInputController.js" Line="1" Column="1" />
-      <File FileName="Assets/MyScripts/SmoothFollow.js" Line="1" Column="1" />
-      <File FileName="Assets/MyScripts/MouseLook.cs" Line="1" Column="1" />
-      <File FileName="Assets/MyScripts/ThirdPersonPlayer.cs" Line="6" Column="4" />
+      <File FileName="Assets\MyScripts\CollectChocolate.js" Line="25" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

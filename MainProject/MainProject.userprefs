@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyScripts/CollectItems.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyScripts/Enemy.js">
     <Files>
       <File FileName="Assets/MyScripts/CollectItems.js" Line="52" Column="77" />
       <File FileName="Assets/MyScripts/Enemy.js" Line="1" Column="1" />
       <File FileName="Assets/MyScripts/Player.js" Line="1" Column="1" />
       <File FileName="Assets/MyScripts/Sword.js" Line="1" Column="1" />
+      <File FileName="Assets/MyScripts/FPSInputController.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

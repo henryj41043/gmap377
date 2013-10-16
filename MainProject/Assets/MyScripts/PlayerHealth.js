@@ -1,5 +1,5 @@
-﻿var maximumHealth = 100.0;//maxHealth
-private var curHealth = 100.0;//currentHealth
+﻿var maximumHealth = 100.0;
+private var curHealth = 100.0;
 private var healthBarLength:float;
 
 function Start () {

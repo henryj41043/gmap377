@@ -1,20 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyScripts/Dodge.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyScripts/PlayerHealth.js">
     <Files>
-      <File FileName="Assets/MyScripts/LockCursor.js" Line="1" Column="1" />
-      <File FileName="Assets/MyScripts/Restart.js" Line="1" Column="1" />
-      <File FileName="Assets/MyScripts/CollectItems.js" Line="1" Column="1" />
-      <File FileName="Assets/MyScripts/CandyDrop.js" Line="1" Column="1" />
-      <File FileName="Assets/MyScripts/ReceiveDamage.js" Line="1" Column="1" />
-      <File FileName="Assets/MyScripts/BasicAttack.js" Line="43" Column="57" />
-      <File FileName="Assets/MyScripts/Dodge.js" Line="33" Column="80" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyScripts\PlayerHealth.js">
-    <Files>
-      <File FileName="Assets\MyScripts\PlayerHealth.js" Line="2" Column="9" />
->>>>>>> 849bb871ad55d487db476dc7f4f1316ce289af04
+      <File FileName="Assets/MyScripts/PlayerHealth.js" Line="1" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

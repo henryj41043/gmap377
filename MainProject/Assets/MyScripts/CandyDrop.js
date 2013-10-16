@@ -29,7 +29,7 @@ function OnTriggerExit (player:Collider) {
 
 function DestroyCandyDrop () {
 	if (IsThePlayerStandingOnMe == true) {
-		player.SendMessage("ResetStanding");
+		//player.SendMessage("ResetStanding");
 		Destroy(gameObject);
 	}
 }

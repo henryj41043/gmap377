@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyScripts/Enemy.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyScripts/CollectItems.js">
     <Files>
-      <File FileName="Assets/MyScripts/CollectItems.js" Line="52" Column="77" />
-      <File FileName="Assets/MyScripts/Enemy.js" Line="1" Column="1" />
-      <File FileName="Assets/MyScripts/Player.js" Line="1" Column="1" />
-      <File FileName="Assets/MyScripts/Sword.js" Line="1" Column="1" />
-      <File FileName="Assets/MyScripts/FPSInputController.js" Line="1" Column="1" />
+      <File FileName="Assets/MyScripts/LockCursor.js" Line="93" Column="2" />
+      <File FileName="Assets/MyScripts/Restart.js" Line="11" Column="2" />
+      <File FileName="Assets/MyScripts/CollectItems.js" Line="119" Column="95" />
+      <File FileName="Assets/MyScripts/BasicAttack.js" Line="54" Column="4" />
+      <File FileName="Assets/MyScripts/CandyDrop.js" Line="30" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

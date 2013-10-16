@@ -44,13 +44,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\MyScripts\BasicAttack.js" />
+     <Compile Include="Assets\MyScripts\CandyDrop.js" />
      <Compile Include="Assets\MyScripts\CharacterMotor.js" />
      <Compile Include="Assets\MyScripts\CollectItems.js" />
-     <Compile Include="Assets\MyScripts\Enemy.js" />
      <Compile Include="Assets\MyScripts\FPSInputController.js" />
-     <Compile Include="Assets\MyScripts\Player.js" />
+     <Compile Include="Assets\MyScripts\LockCursor.js" />
+     <Compile Include="Assets\MyScripts\ReceiveDamage.js" />
+     <Compile Include="Assets\MyScripts\Restart.js" />
      <Compile Include="Assets\MyScripts\SmoothFollow.js" />
-     <Compile Include="Assets\MyScripts\Sword.js" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />

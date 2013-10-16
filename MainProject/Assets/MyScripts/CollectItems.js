@@ -1,80 +1,124 @@
-﻿#pragma strict
-var addItemPoint = 1;
-var TempChocolatePoints = 0;
-var TempLollipopPoints = 0;
-var TempGummyPoints = 0;
-var font : Font;
-var fontSize : int;
-private var count = 0;
+﻿private var Slot1 : int;
+private var Slot2 : int;
+private var Slot3 : int;
+private var CurrentlyOpenSlot : int;
+
+private var StandingOverCandyDrop : int;
+
+private var DestroyCandy : boolean;
 
 function Start () {
+	ResetSlots ();
+	ResetStanding ();
+	CurrentlyOpenSlot = 1;
+}
 
+function ResetSlots () {
+	Slot1 = 0;
+	Slot2 = 0;
+	Slot3 = 0;
 }
 
 function Update () {
-	if(Input.GetMouseButton(1) && count == 3){
-		fireSpecial();
+	CheckSlots();
+	if (Input.GetMouseButtonDown(1)) {
+		if (CurrentlyOpenSlot == 1 && StandingOverCandyDrop != 0) {
+			Slot1 = StandingOverCandyDrop;
+			DestroyCandy = true;
+			Invoke("TurnOffDestroyCandy", 0.25);
+		}
+		if (CurrentlyOpenSlot == 2 && StandingOverCandyDrop != 0) {
+			Slot2 = StandingOverCandyDrop;
+			DestroyCandy = true;
+			Invoke("TurnOffDestroyCandy", 0.25);
+		}
+		if (CurrentlyOpenSlot == 3 && StandingOverCandyDrop != 0) {
+			Slot3 = StandingOverCandyDrop;
+			DestroyCandy = true;
+			Invoke("TurnOffDestroyCandy", 0.25);
+		}
+		if (CurrentlyOpenSlot == 0) {
+			ResetSlots();
+		}
+	}
+	if (Input.GetKeyDown("e")) {
+		ResetSlots();
 	}
 }
 
-function fireSpecial(){
-	var range = 3.0;
-	var damage = 150.0;
-	var direction = transform.TransformDirection(Vector3.forward);
-	var hit : RaycastHit;
-	
-	if (Physics.Raycast (transform.position, direction, hit, range)) {		
-		hit.collider.SendMessageUpwards("ApplyDamage", damage, SendMessageOptions.DontRequireReceiver);
+function OnGUI() {
+	GUI.Label(Rect(0, 50, 100, 150), Slot1 + ", " + Slot2 + ", " + Slot3);
+	if (Slot1 == 1 && Slot2 == 1 && Slot3 == 1) {
+		GUI.Label(Rect(0, 75, 100, 175), "Melting Pot");
 	}
-	
-	TempChocolatePoints = 0;
-	TempLollipopPoints = 0;
-	TempGummyPoints = 0;
-	count = 0;
+	if ((Slot1 == 1 && Slot2 == 1 && Slot3 == 2) || (Slot1 == 1 && Slot2 == 2 && Slot3 == 1) || (Slot1 == 2 && Slot2 == 1 && Slot3 == 1)) {
+		GUI.Label(Rect(0, 75, 150, 175), "Chocolate Truffle");
+	}
+	if (Slot1 == 1 && Slot2 == 1 && Slot3 == 3 || (Slot1 == 1 && Slot2 == 3 && Slot3 == 1) || (Slot1 == 3 && Slot2 == 1 && Slot3 == 1)) {
+		GUI.Label(Rect(0, 75, 150, 175), "Truffle Frag");
+	}
+	if (Slot1 == 1 && Slot2 == 2 && Slot3 == 2 || (Slot1 == 2 && Slot2 == 2 && Slot3 == 1) || (Slot1 == 2 && Slot2 == 1 && Slot3 == 2)) {
+		GUI.Label(Rect(0, 75, 150, 175), "Sticky Slide");
+	}
+	if (Slot1 == 1 && Slot2 == 2 && Slot3 == 3 || (Slot1 == 1 && Slot2 == 3 && Slot3 == 2) || (Slot1 == 2 && Slot2 == 1 && Slot3 == 3) || (Slot1 == 2 && Slot2 == 3 && Slot3 == 1) || (Slot1 == 3 && Slot2 == 1 && Slot3 == 2) || (Slot1 == 3 && Slot2 == 2 && Slot3 == 1)) {
+		GUI.Label(Rect(0, 75, 150, 175), "Cake Pop Polearm");
+	}
+	if (Slot1 == 2 && Slot2 == 2 && Slot3 == 2) {
+		GUI.Label(Rect(0, 75, 150, 175), "Gummy Bind");
+	}
+	if (Slot1 == 2 && Slot2 == 2 && Slot3 == 3 || (Slot1 == 2 && Slot2 == 3 && Slot3 == 2) || (Slot1 == 3 && Slot2 == 2 && Slot3 == 2)) {
+		GUI.Label(Rect(0, 75, 150, 175), "Yum-yum Shield");
+	}
+	if (Slot1 == 3 && Slot2 == 3 && Slot3 == 1 || (Slot1 == 3 && Slot2 == 1 && Slot3 == 3) || (Slot1 == 1 && Slot2 == 3 && Slot3 == 3)) {
+		GUI.Label(Rect(0, 75, 150, 175), "Fondue Strike");
+	}
+	if (Slot1 == 3 && Slot2 == 3 && Slot3 == 2 || (Slot1 == 3 && Slot2 == 2 && Slot3 == 3) || (Slot1 == 2 && Slot2 == 3 && Slot3 == 3)) {
+		GUI.Label(Rect(0, 75, 150, 175), "Sweet Frost");
+	}
+	if (Slot1 == 3 && Slot2 == 3 && Slot3 == 3) {
+		GUI.Label(Rect(0, 75, 150, 175), "Rock Candy Armor");
+	}
 }
 
-function OnTriggerEnter (other : Collider) 
-{
-    if ((other.name == "Chocolate" || other.name == "Chocolate(Clone)") && count < 3) 
-    {   
-        TempChocolatePoints += addItemPoint;
-        Destroy (other.gameObject);
-        count++;
-    }
-    
-    if ((other.name == "Lollipop" || other.name == "Lollipop(Clone)") && count < 3) 
-    {   
-        TempLollipopPoints += addItemPoint;
-        Destroy (other.gameObject);
-        count++;
-    }
-    
-    if ((other.name == "Gummy" || other.name == "Gummy(Clone)") && count < 3) 
-    {   
-        TempGummyPoints += addItemPoint;
-        Destroy (other.gameObject);
-        count++;
-    }
+function TurnOffDestroyCandy() {
+	DestroyCandy = false;
 }
-function OnGUI () 
-{
-	GUI.skin.label.fontSize = fontSize;
-	GUI.skin.font = font;
- 	GUI.color = Color.cyan;
- 	
- 	if(TempChocolatePoints > 0){
-		GUI.Label (Rect (20,0, 300, 50), "Chocolate: " + TempChocolatePoints);
+
+function ResetStanding () {
+	StandingOverCandyDrop = 0;
+}
+
+function StandingOnChocolateDrop () {
+	StandingOverCandyDrop = 1;
+}
+
+function StandingOnGummyDrop () {
+	StandingOverCandyDrop = 2;
+}
+
+function StandingOnLollipopDrop () {
+	StandingOverCandyDrop = 3;
+}
+
+function CheckSlots () {
+	if (Slot1 == 0) {
+		CurrentlyOpenSlot = 1;
 	}
-	
-	if(TempLollipopPoints > 0){
-		GUI.Label (Rect (20,20, 300, 50), "Lollipop: " + TempLollipopPoints);
+	if (Slot1 != 0 && Slot2 == 0) {
+		CurrentlyOpenSlot = 2;
 	}
-	
-	if(TempGummyPoints > 0){
-		GUI.Label (Rect (20,40, 300, 50), "Gummy: " + TempGummyPoints);
+	if (Slot1 != 0 && Slot2 != 0 && Slot3 == 0) {
+		CurrentlyOpenSlot = 3;
 	}
-	
-	if(count == 3){
-		GUI.Label(Rect(20,60,300,50), "Special Available!");
+	if (Slot1 != 0 && Slot2 != 0 && Slot3 != 0) {
+		CurrentlyOpenSlot = 0;
+	}
+}
+
+function OnTriggerStay (object:Collider) {
+	if (object.tag == "ChocolateDrop" || object.tag == "GummyDrop" || object.tag == "LollipopDrop") {
+		if (DestroyCandy == true) {
+			object.SendMessage("DestroyCandyDrop");
+		}
 	}
 }

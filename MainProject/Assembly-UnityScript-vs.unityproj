@@ -48,6 +48,7 @@
      <Compile Include="Assets\MyScripts\CandyDrop.js" />
      <Compile Include="Assets\MyScripts\CharacterMotor.js" />
      <Compile Include="Assets\MyScripts\CollectItems.js" />
+     <Compile Include="Assets\MyScripts\Dodge.js" />
      <Compile Include="Assets\MyScripts\FPSInputController.js" />
      <Compile Include="Assets\MyScripts\LockCursor.js" />
      <Compile Include="Assets\MyScripts\ReceiveDamage.js" />

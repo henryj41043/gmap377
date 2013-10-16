@@ -42,7 +42,7 @@ function AttackPhase2 () {
 	
 	var fwd = transform.TransformDirection (Vector3.forward);
 	if (Physics.Raycast (transform.position, fwd, hitInfo, range) && hitInfo.transform.tag == "Enemy") {
-		Debug.Log("Dealing damage to enemy");
+		//Debug.Log("Dealing damage to enemy");
 		hitInfo.collider.gameObject.SendMessage("TakeDamage", damage);
 	}
 }

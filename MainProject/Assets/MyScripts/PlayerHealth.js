@@ -23,8 +23,8 @@ function ApplyDamage (damage : float) {
 	
 }
 function Die () {
-
-	Destroy(this.gameObject);
+	Application.LoadLevel(0);
+	//Destroy(this.gameObject);
 }
 function HealthBar(){
 

@@ -1,13 +1,27 @@
-﻿var maximumHealth = 100.0;
-private var curHealth = 100.0;
-private var healthBarLength:float;
+﻿var maximumHealth = 10;
+var curHealth = 10;
+var  heartGUI:GUITexture;
+private var spacingX:float;
+private var spacingY:float;
+
 
 function Start () {
-	healthBarLength = Screen.width / 2;
+	AddHearts();
 }
+function AddHearts()
+{
+	spacingX = -0.138;
+	spacingY = 0.63;
+	
+	heartsArray = new Array();
+	
+	for(var i = 0; i < curHealth ; i++)
+	{
+		heartsArray[i] = Instantiate(heartGUI, Vector3(spacingX, spacingY, 0), Quaternion.identity );
+		spacingX += 0.055;
+	}
+	
 
-function Update () {
-	HealthBar();
 }
 function ApplyDamage (damage : float) {
 
@@ -16,6 +30,7 @@ function ApplyDamage (damage : float) {
 	}
 	
 	curHealth -= damage;
+	ModifyHearts();
 	
 	if(curHealth <= 0.0){
 		Die();
@@ -26,15 +41,11 @@ function Die () {
 	Application.LoadLevel(0);
 	//Destroy(this.gameObject);
 }
-function HealthBar(){
+function ModifyHearts ()
+{
 
-	healthBarLength = (Screen.width / 2) * curHealth/ maximumHealth;
-}
-function OnGUI(){
+	var tempCurHealth = curHealth - 1;
+	PlayerHealth.heartsArray[tempCurHealth].active = false;
+	//Debug.Log(curHealth);
 
-	if(curHealth < 50)
-	{
-		GUI.color = Color.red;
-	}
-	GUI.Box (new Rect(10,20,healthBarLength,20), curHealth + "/" + maximumHealth);
 }

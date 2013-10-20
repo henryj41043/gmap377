@@ -24,7 +24,7 @@ function Update () {
 }
 
 function baseAttack(){
-	Debug.Log("Enemy Attacked!");
+	//Debug.Log("Enemy Attacked!");
 	enemyBehavior = 0;
 }
 

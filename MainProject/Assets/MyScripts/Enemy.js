@@ -19,6 +19,7 @@ function Update () {
 	
 	if(enemyBehavior == 1){
 		baseAttack();
+		enemyBehavior = 0;
 	}
 }
 

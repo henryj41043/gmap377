@@ -1,6 +1,7 @@
 ﻿var maximumHealth = 10;
 var curHealth = 10;
-var  heartGUI:GUITexture;
+//var curHealth = System.Int32.Parse(OnStartGame.PlayerHP);
+var heartGUI:GUITexture;
 private var spacingX:float;
 private var spacingY:float;
 

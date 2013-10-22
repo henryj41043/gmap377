@@ -12,19 +12,19 @@ function Start () {
 function OnTriggerEnter (player:Collider) {
 	IsThePlayerStandingOnMe = true;
 	if (candyIdentifier == 1) {
-		player.SendMessage("StandingOnChocolateDrop");
+		player.SendMessage("StandingOnChocolateDrop", SendMessageOptions.DontRequireReceiver);
 	}
 	if (candyIdentifier == 2) {
-		player.SendMessage("StandingOnGummyDrop");
+		player.SendMessage("StandingOnGummyDrop", SendMessageOptions.DontRequireReceiver);
 	}
 	if (candyIdentifier == 3) {
-		player.SendMessage("StandingOnLollipopDrop");
+		player.SendMessage("StandingOnLollipopDrop", SendMessageOptions.DontRequireReceiver);
 	}
 }
 
 function OnTriggerExit (player:Collider) {
 	IsThePlayerStandingOnMe = false;
-	player.SendMessage("ResetStanding");
+	player.SendMessage("ResetStanding", SendMessageOptions.DontRequireReceiver);
 }
 
 function DestroyCandyDrop () {

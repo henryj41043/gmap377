@@ -8,17 +8,45 @@ private var ReadyToAttack : boolean;
 
 var hitbox : GameObject;
 
-var damage : int;
-var range : int;
-var windupMovementSpeed : int;
+var damage : float;
+private var baseDamage : float;
+var range : float;
+private var baseRange : float;
+var windupMovementSpeed : float;
 
 private var hitInfo : RaycastHit;
 
 private var moveDirection : Vector3 = Vector3.zero;
 
 function Start () {
+	baseDamage = damage;
+	baseRange = range;
 	currentHit = 0;
 	ReadyToAttack = true;
+}
+
+function IncreaseDamage (receivedDamageIncrease : float) {
+	damage = baseDamage + receivedDamageIncrease;
+}
+
+function IncreaseDamageDuration (receivedDamageDuration : float) {
+	Invoke("RevertDamage", receivedDamageDuration);
+}
+
+function IncreaseRange (receivedRangeIncrease : float) {
+	range = baseRange + receivedRangeIncrease;
+}
+
+function IncreaseRangeDuration (receivedRangeDuration : float) {
+	Invoke("RevertRange", receivedRangeDuration);
+}
+
+function RevertDamage () {
+	damage = baseDamage;
+}
+
+function RevertRange () {
+	range = baseRange;
 }
 
 function Update () {
@@ -43,7 +71,7 @@ function AttackPhase2 () {
 	var fwd = transform.TransformDirection (Vector3.forward);
 	if (Physics.Raycast (transform.position, fwd, hitInfo, range) && hitInfo.transform.tag == "Enemy") {
 		//Debug.Log("Dealing damage to enemy");
-		hitInfo.collider.gameObject.SendMessage("TakeDamage", damage);
+		hitInfo.collider.gameObject.SendMessage("ApplyDamage", damage);
 	}
 }
 

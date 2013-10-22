@@ -18,7 +18,7 @@ function Update () {
 	}
 }
 
-function TakeDamage (damage : int) {
+function ApplyDamage (damage : int) {
 	currentHealth -= damage;
 }
 

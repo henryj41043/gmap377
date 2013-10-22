@@ -1,10 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Special Attacks\223\223Effect.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Special Attacks\122\122Effect.js">
     <Files>
-      <File FileName="Assets\CircularGravity Package\Scripts\CircularGravity.cs" Line="1" Column="1" />
-      <File FileName="Assets\Special Attacks\223\223.js" Line="13" Column="49" />
-      <File FileName="Assets\Special Attacks\223\223Effect.js" Line="17" Column="2" />
+      <File FileName="Assets\Special Attacks\122\122Effect.js" Line="21" Column="2" />
+      <File FileName="Assets\MyScripts\Dodge.js" Line="42" Column="38" />
+      <File FileName="Assets\Special Attacks\122\122.js" Line="15" Column="47" />
+      <File FileName="Assets\Special Attacks\122\PlayerStickySlide.js" Line="61" Column="37" />
+      <File FileName="Assets\Special Attacks\113\113.js" Line="1" Column="1" />
+      <File FileName="Assets\Special Attacks\112\112PrimaryEffect.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

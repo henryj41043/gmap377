@@ -2,16 +2,22 @@
 
 private var movement : CharacterMotor;
 
-var phaseChange : float;
+var phaseChange1 : float;
+var phaseChange2 : float;
 private var readyToDodge : boolean;
 
-var travelDistance : float;
+var travelSpeed : float;
 var recoverSpeed : int;
 
 private var moveDirection : Vector3 = Vector3.zero;
+private var controller : CharacterController;
+
+private var dodging : boolean;
 
 function Start () {
 	readyToDodge = true;
+	dodging = false;
+	controller = GetComponent(CharacterController);
 }
 
 function Update () {
@@ -19,21 +25,25 @@ function Update () {
 		DodgePhase1();
 		readyToDodge = false;
 	}
+	if (dodging == true) {
+		controller.Move(moveDirection * Time.deltaTime * travelSpeed);
+	}
 }
 
 function DodgePhase1 () {
-	Invoke("DodgePhase2", phaseChange);
+	moveDirection = transform.forward;
+	Invoke("DodgePhase2", phaseChange1);
 	movement = GetComponent(CharacterMotor);
 	movement.enabled = false;
 }
 
 function DodgePhase2 () {
-	Invoke("DodgePhase3", phaseChange);
-	
-	transform.position = transform.position + (travelDistance * transform.forward);
+	dodging = true;
+	Invoke("DodgePhase3", phaseChange2);
 }
 
 function DodgePhase3 () {
+	dodging = false;
 	movement = GetComponent(CharacterMotor);
 	movement.enabled = true;
 	readyToDodge = true;

@@ -69,8 +69,13 @@
      <Compile Include="Assets\Special Attacks\113\113Explosion.js" />
      <Compile Include="Assets\Special Attacks\113\113LandingZone.js" />
      <Compile Include="Assets\Special Attacks\122\122.js" />
+     <Compile Include="Assets\Special Attacks\122\122Effect.js" />
+     <Compile Include="Assets\Special Attacks\122\PlayerStickySlide.js" />
      <Compile Include="Assets\Special Attacks\123\123.js" />
      <Compile Include="Assets\Special Attacks\222\222.js" />
+     <Compile Include="Assets\Special Attacks\222\222Effect.js" />
+     <Compile Include="Assets\Special Attacks\222\222Explosion.js" />
+     <Compile Include="Assets\Special Attacks\222\222LandingZone.js" />
      <Compile Include="Assets\Special Attacks\223\223.js" />
      <Compile Include="Assets\Special Attacks\223\223Effect.js" />
      <Compile Include="Assets\Special Attacks\331\331.js" />
@@ -78,6 +83,7 @@
      <Compile Include="Assets\Special Attacks\331\331PrimaryEffect.js" />
      <Compile Include="Assets\Special Attacks\331\331SecondaryEffect.js" />
      <Compile Include="Assets\Special Attacks\332\332.js" />
+     <Compile Include="Assets\Special Attacks\332\332Effect.js" />
      <Compile Include="Assets\Special Attacks\333\333.js" />
      <Compile Include="Assets\Special Attacks\333\333Effect.js" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />

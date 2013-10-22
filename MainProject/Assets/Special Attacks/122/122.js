@@ -1,27 +1,23 @@
 ﻿#pragma strict
 
-var movement : CharacterMotor;
+var StickySlideEffect : GameObject;
 
-var travelSpeed : float;
-var travelDistance : float;
 var damage : float;
-
+var damageRadius : float;
 var phaseChange1 : float;
 var phaseChange2 : float;
-var phaseChange3 : float;
+var travelSpeed : float;
+var recoverSpeed : int;
 
 function StickySlide () {
-	Invoke("StickySlideMovement", phaseChange1);
-	movement = GetComponent(CharacterMotor);
-	movement.enabled = false;
-}
-
-function StickySlideMovement () {
-	Invoke("StickySlideEnd", phaseChange2);
-	transform.position = transform.position + (travelDistance * transform.forward);
-}
-
-function StickySlideEnd () {
-	movement = GetComponent(CharacterMotor);
-	movement.enabled = true;
+	SendMessageUpwards("StickySlidePhase1");
+	var StickySlide : GameObject = Instantiate(StickySlideEffect, transform.position, transform.rotation);
+	var StickySlideTransform = StickySlide.transform;
+	StickySlideTransform.parent = transform;
+	StickySlide.SendMessage("Damage", damage);
+	StickySlide.SendMessage("DamageRadius", damageRadius);
+	SendMessageUpwards("StickySlidePhaseChange1", phaseChange1);
+	SendMessageUpwards("StickySlidePhaseChange2", phaseChange2);
+	SendMessageUpwards("StickySlideTravelSpeed", travelSpeed);
+	SendMessageUpwards("StickySlideRecoverSpeed", recoverSpeed);
 }

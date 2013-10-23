@@ -53,6 +53,7 @@
      <Compile Include="Assets\MyScripts\Enemy.js" />
      <Compile Include="Assets\MyScripts\FPSInputController.js" />
      <Compile Include="Assets\MyScripts\LockCursor.js" />
+     <Compile Include="Assets\MyScripts\PauseMenu.js" />
      <Compile Include="Assets\MyScripts\PlayerHealth.js" />
      <Compile Include="Assets\MyScripts\ReceiveDamage.js" />
      <Compile Include="Assets\MyScripts\Restart.js" />

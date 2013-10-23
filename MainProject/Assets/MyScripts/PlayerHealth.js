@@ -8,6 +8,9 @@ private var Xinterval:float = 0.055;
 private var hearts = new Array();
 
 function Start () {
+	//add para here for testing
+	maxHealth = OnStartGame.paraArray[3];
+	//
 	curHealth = maxHealth;
 	AddHearts();
 }

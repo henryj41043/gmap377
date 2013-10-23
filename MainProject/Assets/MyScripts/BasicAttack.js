@@ -19,6 +19,10 @@ private var hitInfo : RaycastHit;
 private var moveDirection : Vector3 = Vector3.zero;
 
 function Start () {
+
+	//add para here for testing
+	damage = OnStartGame.paraArray[2];
+	//
 	baseDamage = damage;
 	baseRange = range;
 	currentHit = 0;

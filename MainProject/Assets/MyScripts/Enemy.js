@@ -11,7 +11,11 @@ private var playerPositionZ : float;
 private var myPositionX : float;
 private var myPositionY : float;
 private var myPositionZ : float;
-
+// add para here for testing
+speed = OnStartGame.paraArray[4];
+attackSpeed = OnStartGame.paraArray[7];
+damage = OnStartGame.paraArray[6];
+//
 function Start () {
 }
 

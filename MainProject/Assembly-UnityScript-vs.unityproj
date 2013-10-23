@@ -44,6 +44,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\MyScripts\AIManager.js" />
      <Compile Include="Assets\MyScripts\BasicAttack.js" />
      <Compile Include="Assets\MyScripts\CandyDrop.js" />
      <Compile Include="Assets\MyScripts\CharacterMotor.js" />

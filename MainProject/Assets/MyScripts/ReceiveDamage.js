@@ -3,6 +3,7 @@
 var chocolateDrop : GameObject;
 var gummyDrop : GameObject;
 var lollipopDrop : GameObject;
+var manager : GameObject;
 private var candyDrop : int;
 
 var maximumHealth : int;

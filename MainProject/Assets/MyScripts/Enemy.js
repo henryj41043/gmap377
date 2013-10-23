@@ -1,48 +1,61 @@
 ﻿#pragma strict
 
-var mainCharacter : GameObject;
-var attackRange : int;
-private var enemyBehavior : int;
+var speed : float;
+var attackRange : float;
+var attackSpeed : float;
+var damage : int;
+private var timeSinceLastAttack : float = 0;
+private var playerPositionX : float;
+private var playerPositionY : float;
+private var playerPositionZ : float;
+private var myPositionX : float;
+private var myPositionY : float;
+private var myPositionZ : float;
 
 function Start () {
-	enemyBehavior = 0;
 }
 
 function Update () {
-	if(Vector3.Distance(this.transform.position, mainCharacter.transform.position) < attackRange){
-		enemyBehavior = 1;
+	timeSinceLastAttack += Time.deltaTime;
+	var target : GameObject = GameObject.FindGameObjectWithTag("Player");
+	playerPositionX = target.transform.position.x;
+	playerPositionY = target.transform.position.y;
+	playerPositionZ = target.transform.position.z;
+	myPositionX = transform.position.x;
+	myPositionY = transform.position.y;
+	myPositionZ = transform.position.z;
+	if (playerPositionX > myPositionX)
+	{
+		rigidbody.MovePosition(rigidbody.position + (Vector3.right * speed * Time.deltaTime));
 	}
-	
-	if(enemyBehavior == 0){
-		this.transform.position = Vector3.Lerp(this.transform.position, mainCharacter.transform.position, Time.deltaTime);
+	if (playerPositionX < myPositionX)
+	{
+		rigidbody.MovePosition(rigidbody.position + (-Vector3.right * speed * Time.deltaTime));
 	}
-	
-	if(enemyBehavior == 1){
-		baseAttack();
-		enemyBehavior = 0;
+	if (playerPositionY > myPositionY)
+	{
+		rigidbody.MovePosition(rigidbody.position + (Vector3.up * speed * Time.deltaTime));
+	}
+	if (playerPositionY < myPositionY)
+	{
+		rigidbody.MovePosition(rigidbody.position + (-Vector3.up * speed * Time.deltaTime));
+	}
+	if (playerPositionZ > myPositionZ)
+	{
+		rigidbody.MovePosition(rigidbody.position + (Vector3.forward * speed * Time.deltaTime));
+	}
+	if (playerPositionZ < myPositionZ)
+	{
+		rigidbody.MovePosition(rigidbody.position + (-Vector3.forward * speed * Time.deltaTime));
+	}
+	if(Vector3.Distance(this.transform.position, target.transform.position) < attackRange){
+		basicAttack(target);
 	}
 }
 
-function baseAttack(){
-	//Debug.Log("Enemy Attacked!");
-	enemyBehavior = 0;
-}
-
-/*
-var enemy : Transform; 
-var start: Transform;
-var end: Transform;
-
-function Update(){ 
-	if (  Vector3.Distance( enemy.position, (Vector3.Lerp(start.position, end.position,Time.time) )) < 100  ) { 
-       print("player is close"); 
-       transform.position = enemy.transform.position; 
-       transform.rotation = enemy.transform.rotation ;
-       transform.position = Vector3.Lerp(start.position, end.position, Time.deltaTime  );
-	} 
-	else{
-    	print("not close yet");
-		print(Vector3.Distance( enemy.position, transform.position ));
+function basicAttack(target : GameObject){
+	if(timeSinceLastAttack > 1 / attackSpeed){
+		target.SendMessage("ApplyDamage", damage);
+		timeSinceLastAttack = 0;
 	}
 }
-*/

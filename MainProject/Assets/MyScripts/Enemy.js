@@ -16,6 +16,7 @@ speed = OnStartGame.paraArray[4];
 attackSpeed = OnStartGame.paraArray[7];
 damage = OnStartGame.paraArray[6];
 //
+
 function Start () {
 }
 

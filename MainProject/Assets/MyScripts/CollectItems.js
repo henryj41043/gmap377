@@ -129,6 +129,7 @@ function OnTriggerStay (object:Collider) {
 	if (object.tag == "ChocolateDrop" || object.tag == "GummyDrop" || object.tag == "LollipopDrop") {
 		if (DestroyCandy == true) {
 			object.SendMessage("DestroyCandyDrop");
+			DestroyCandy = false;
 			ResetStanding();
 		}
 	}

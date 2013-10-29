@@ -49,8 +49,8 @@ function StickySlidePhase1 () {
 
 function DodgePhase2 () {
 	dodging = true;
-	Invoke("DodgePhase3", phaseChange2);
 	Physics.IgnoreLayerCollision(8, 9, true);
+	Invoke("DodgePhase3", phaseChange2);
 }
 
 function DodgePhase3 () {

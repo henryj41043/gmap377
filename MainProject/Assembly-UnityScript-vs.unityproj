@@ -46,20 +46,25 @@
   <ItemGroup>
      <Compile Include="Assets\MyScripts\AIManager.js" />
      <Compile Include="Assets\MyScripts\BasicAttack.js" />
+     <Compile Include="Assets\MyScripts\BasicAttackHitbox.js" />
      <Compile Include="Assets\MyScripts\CandyDrop.js" />
      <Compile Include="Assets\MyScripts\CharacterMotor.js" />
      <Compile Include="Assets\MyScripts\CollectItems.js" />
+     <Compile Include="Assets\MyScripts\CreateDoor.js" />
      <Compile Include="Assets\MyScripts\Dodge.js" />
      <Compile Include="Assets\MyScripts\DontGoThroughThings.js" />
      <Compile Include="Assets\MyScripts\Enemy.js" />
+     <Compile Include="Assets\MyScripts\EnemyAttackHitbox.js" />
      <Compile Include="Assets\MyScripts\FPSInputController.js" />
      <Compile Include="Assets\MyScripts\LockCursor.js" />
+     <Compile Include="Assets\MyScripts\OnStartGame.js" />
      <Compile Include="Assets\MyScripts\PauseMenu.js" />
      <Compile Include="Assets\MyScripts\PlayerHealth.js" />
      <Compile Include="Assets\MyScripts\ReceiveDamage.js" />
      <Compile Include="Assets\MyScripts\Restart.js" />
      <Compile Include="Assets\MyScripts\SmoothFollow.js" />
      <Compile Include="Assets\MyScripts\SpecialAttackManager.js" />
+     <Compile Include="Assets\MyScripts\YouWin.js" />
      <Compile Include="Assets\Special Attacks\111\111.js" />
      <Compile Include="Assets\Special Attacks\111\111Effect.js" />
      <Compile Include="Assets\Special Attacks\112\112.js" />

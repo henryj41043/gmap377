@@ -1,18 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyScripts/CharacterMotor.js">
-    <Files>
-      <File FileName="Assets/MyScripts/CharacterMotor.js" Line="575" Column="35" />
-      <File FileName="Assets/MyScripts/Enemy.js" Line="1" Column="1" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyScripts\Enemy.js">
-    <Files>
-      <File FileName="Assets\MyScripts\Enemy.js" Line="25" Column="34" />
-      <File FileName="Assets\MyScripts\BasicAttack.js" Line="24" Column="1" />
->>>>>>> 4c1570066dde5e68d341925be4511a2d1e496091
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

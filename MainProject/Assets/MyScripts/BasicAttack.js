@@ -2,12 +2,13 @@
 
 private var movement : CharacterMotor;
 
-private var currentHit : int;
 var phaseChange1 : float;
 var phaseChange2 : float;
-private var readyToAttack : boolean;
+var readyToAttack : boolean;
 
 var hitbox : GameObject;
+var currentHit : int;
+var finalHit : int;
 
 var damage : float;
 private var baseDamage : float;
@@ -18,24 +19,20 @@ var windupMovementSpeed : float;
 private var hitInfo : RaycastHit;
 
 private var moveDirection : Vector3 = Vector3.zero;
-private var rotationDirection : Quaternion;
-private var rotationLock : boolean;
 private var controller : CharacterController;
 
 private var windupMovement : boolean;
 
 function Start () {
-
+	currentHit = 0;
 	//add para here for testing
-	//damage = OnStartGame.paraArray[2];
+	damage = OnStartGame.paraArray[2];
 	//
 	baseDamage = damage;
 	baseRange = range;
-	currentHit = 0;
 	ReadyToAttack();
 	controller = GetComponent(CharacterController);
 	windupMovement = false;
-	rotationLock = false;
 }
 
 function IncreaseDamage (receivedDamageIncrease : float) {
@@ -70,22 +67,33 @@ function NotReadyToAttack () {
 	readyToAttack = false;
 }
 
+function CountCurrentHit () {
+	if (currentHit < finalHit) {
+		currentHit += 1;
+	}
+}
+
 function Update () {
 	if (Input.GetMouseButtonDown(0) && readyToAttack == true) {
+		CountCurrentHit();
+		if (currentHit == 1) {
+			BroadcastMessage("PlayAttack1");
+		}
+		if (currentHit == 2) {
+			BroadcastMessage("PlayAttack2");
+		}
+		if (currentHit == 3) {
+			BroadcastMessage("PlayAttack3");
+		}
 		AttackPhase1();
-		rotationDirection = transform.rotation;
 		NotReadyToAttack();
 	}
 	if (windupMovement == true) {
 		controller.Move(moveDirection * Time.deltaTime * windupMovementSpeed);	
 	}
-	if (rotationLock == true) {
-		transform.rotation = rotationDirection;
-	}
 }
 
 function AttackPhase1 () {
-	rotationLock = true;
 	windupMovement = true;
 	moveDirection = transform.forward;
 	Invoke("AttackPhase2", phaseChange1);
@@ -99,6 +107,10 @@ function AttackPhase2 () {
 	Invoke("AttackPhase3", phaseChange2);
 	hitbox.SetActive(true);
 	hitbox.SendMessage("Damage", damage);
+	if (currentHit == finalHit) {
+		hitbox.SendMessage("FinalHit");
+		currentHit = 0;
+	}
 	/*var fwd = transform.TransformDirection (Vector3.forward);
 	if (Physics.Raycast (transform.position, fwd, hitInfo, range) && hitInfo.transform.tag == "Enemy") {
 		//Debug.Log("Dealing damage to enemy");
@@ -107,7 +119,6 @@ function AttackPhase2 () {
 }
 
 function AttackPhase3 () {
-	rotationLock = false;
 	movement = GetComponent(CharacterMotor);
 	movement.enabled = true;
 	ReadyToAttack();

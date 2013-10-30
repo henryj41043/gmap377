@@ -35,8 +35,11 @@ function ApplyDamage (damage : int) {
 	}	
 }
 
+private var windowRect : Rect;
+	
 function Die () {
-	Application.LoadLevel(0);
+	BroadcastMessage("PlayDeath");
+	Invoke("Restart", 1);
 	//Destroy(this.gameObject);
 }
 
@@ -48,4 +51,8 @@ function ModifyHearts(lostHearts : int){
     		break;
     	}
     }
+}
+
+function Restart () {
+	Application.LoadLevel(0);
 }

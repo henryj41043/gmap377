@@ -1,11 +1,7 @@
 ﻿#pragma strict
-function OnTriggerEnter(other : Collider){
 
-	if(other.name == "Boss")
-	{
-		Destroy(other.gameObject);
+function OnTriggerEnter(object : Collider) {
+	if (object.tag == "Player") {
 		Application.LoadLevel(2);
 	}
 }
-
-

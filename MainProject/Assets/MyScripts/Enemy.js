@@ -3,6 +3,8 @@
 var chocolateDrop : GameObject;
 var gummyDrop : GameObject;
 var lollipopDrop : GameObject;
+var minimumDropRange : float;
+var maximumDropRange : float;
 var manager : GameObject;
 private var candyDrop : int;
 
@@ -42,6 +44,7 @@ function Start () {
 
 function FixedUpdate () {
 	var target : GameObject = GameObject.FindGameObjectWithTag("Player");
+	transform.rotation.x = 0;
 	if (rotationLock == false) {
 		transform.LookAt(target.transform);
 	}
@@ -51,36 +54,33 @@ function FixedUpdate () {
 	myPositionX = transform.position.x;
 	myPositionY = transform.position.y;
 	myPositionZ = transform.position.z;
-	if (playerPositionX > myPositionX)
+	if ((playerPositionX > myPositionX))
 	{
 		rigidbody.MovePosition(rigidbody.position + (Vector3.right * speed * movementSlow * Time.deltaTime));
 	}
-	if (playerPositionX < myPositionX)
+	if ((playerPositionX < myPositionX))
 	{
 		rigidbody.MovePosition(rigidbody.position + (-Vector3.right * speed * movementSlow  * Time.deltaTime));
 	}
-	if (playerPositionY > myPositionY)
+	if ((playerPositionY > myPositionY))
 	{
 		rigidbody.MovePosition(rigidbody.position + (Vector3.up * speed * movementSlow  * Time.deltaTime));
 	}
-	if (playerPositionY < myPositionY)
+	if ((playerPositionY < myPositionY))
 	{
 		rigidbody.MovePosition(rigidbody.position + (-Vector3.up * speed * movementSlow  * Time.deltaTime));
 	}
-	if (playerPositionZ > myPositionZ)
+	if ((playerPositionZ > myPositionZ))
 	{
 		rigidbody.MovePosition(rigidbody.position + (Vector3.forward * speed * movementSlow  * Time.deltaTime));
 	}
-	if (playerPositionZ < myPositionZ)
+	if ((playerPositionZ < myPositionZ))
 	{
 		rigidbody.MovePosition(rigidbody.position + (-Vector3.forward * speed * movementSlow  * Time.deltaTime));
 	}
-	if (Vector3.Distance(this.transform.position, target.transform.position) < attackRange){
-		if (readyToAttack == true) {
-			AttackPhase1();
-			NotReadyToAttack();
-			Debug.Log("Initiating Attack Phase 1");
-		}
+	if (readyToAttack == true && (Vector3.Distance(this.transform.position, target.transform.position) < attackRange)){
+		AttackPhase1();
+		NotReadyToAttack();
 	}
 	if (currentHealth <= 0) {
 		KillSelf();
@@ -145,12 +145,12 @@ function KillSelf() {
 function DropCandy() {
 	candyDrop = Random.Range(1, 4);
 	if (candyDrop == 1) {
-		Instantiate(chocolateDrop, transform.position, transform.rotation);
+		Instantiate(chocolateDrop, Vector3(transform.position.x + Random.Range(minimumDropRange, maximumDropRange), transform.position.y, transform.position.z + Random.Range(minimumDropRange, maximumDropRange)), transform.rotation);
 	}
 	if (candyDrop == 2) {
-		Instantiate(gummyDrop, transform.position, transform.rotation);
+		Instantiate(gummyDrop, Vector3(transform.position.x + Random.Range(minimumDropRange, maximumDropRange), transform.position.y, transform.position.z + Random.Range(minimumDropRange, maximumDropRange)), transform.rotation);
 	}
 	if (candyDrop == 3) {
-		Instantiate(lollipopDrop, transform.position, transform.rotation);
+		Instantiate(lollipopDrop, Vector3(transform.position.x + Random.Range(minimumDropRange, maximumDropRange), transform.position.y, transform.position.z + Random.Range(minimumDropRange, maximumDropRange)), transform.rotation);
 	}
 }

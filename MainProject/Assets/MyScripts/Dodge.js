@@ -14,7 +14,6 @@ var sidewaysDodgeFactor : float;
 private var dodgeFactor : float;
 
 private var moveDirection : Vector3 = Vector3.zero;
-private var rotationDirection : Quaternion;
 private var controller : CharacterController;
 
 private var dodging : boolean;
@@ -39,35 +38,30 @@ function Update () {
 		if (Input.GetKey(KeyCode.S)) {
 			moveDirection = transform.forward * -1;
 			dodgeFactor = backwardDodgeFactor;
-			rotationDirection = transform.rotation;
 			DodgePhase1();
 			NotReadyToDodge();
 		}
 		if (Input.GetKey(KeyCode.A)) {
 			moveDirection = transform.right * -1;
 			dodgeFactor = sidewaysDodgeFactor;
-			rotationDirection = transform.rotation;
 			DodgePhase1();
 			NotReadyToDodge();
 		}
 		if (Input.GetKey(KeyCode.D)) {
 			moveDirection = transform.right;
 			dodgeFactor = sidewaysDodgeFactor;
-			rotationDirection = transform.rotation;
 			DodgePhase1();
 			NotReadyToDodge();
 		}
 		if (Input.GetKey(KeyCode.W)) {	
 			moveDirection = transform.forward;
 			dodgeFactor = forwardDodgeFactor;
-			rotationDirection = transform.rotation;
 			DodgePhase1();
 			NotReadyToDodge();
 		}
 	}
 	if (dodging == true) {
 		controller.Move(moveDirection * Time.deltaTime * travelSpeed * dodgeFactor);
-		transform.rotation = rotationDirection;
 	}
 }
 

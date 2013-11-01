@@ -1,12 +1,12 @@
-Idle frames: 24-240
-Walking frames: 12 - 92
-Running frames: 6 - 19
-Attack 1 wind-up: 1 - 12
-Attack 1 swing: 12 - 18
-Attack 2 wind-up: 18 - 28
-Attack 2 swing: 28 - 34
-Attack 3 wind-up: 34 - 43
-Attack 3 swing: 42 - 50
-Special Attack: 1 - 24
-Recoil frames: 1 - 20
-Death frames: 1 - 30
+Idle frames: 1-40
+Walking frames: 65-105
+Running frames: 110-123
+Attack 1 wind-up: 127 - 133
+Attack 1 swing: 134 - 142
+Attack 2 wind-up: 142 - 147
+Attack 2 swing: 148 - 155
+Attack 3 wind-up: 156 - 164
+Attack 3 swing: 165 - 172
+Special Attack: 183 - 202
+Recoil frames: 225 - 242
+Death frames: 251 - 280

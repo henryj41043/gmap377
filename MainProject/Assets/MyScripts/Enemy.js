@@ -11,12 +11,13 @@ private var candyDrop : int;
 var maximumHealth : int;
 private var currentHealth : int;
 
-var speed : float;
+var moveSpeed : float;
 var attackRange : float;
 var damage : int;
 var phaseChange1 : float;
 var phaseChange2 : float;
 var hitbox : GameObject;
+var gravity : float;
 private var readyToAttack : boolean;
 private var moveDirection : Vector3 = Vector3.zero;
 private var rotationLock : boolean;
@@ -42,43 +43,18 @@ function Start () {
 	rotationLock = false;
 }
 
-function FixedUpdate () {
+function Update () {
+	var controller : CharacterController = GetComponent(CharacterController);
 	var target : GameObject = GameObject.FindGameObjectWithTag("Player");
 	transform.rotation.x = 0;
 	if (rotationLock == false) {
 		transform.LookAt(target.transform);
 	}
-	playerPositionX = target.transform.position.x;
-	playerPositionY = target.transform.position.y;
-	playerPositionZ = target.transform.position.z;
-	myPositionX = transform.position.x;
-	myPositionY = transform.position.y;
-	myPositionZ = transform.position.z;
-	if ((playerPositionX > myPositionX))
-	{
-		rigidbody.MovePosition(rigidbody.position + (Vector3.right * speed * movementSlow * Time.deltaTime));
+	if (Vector3.Distance(this.transform.position, target.transform.position) >= attackRange) {
+		moveDirection = Vector3(transform.forward.x, gravity, transform.forward.z);
+		controller.Move(moveDirection * Time.deltaTime * moveSpeed);
 	}
-	if ((playerPositionX < myPositionX))
-	{
-		rigidbody.MovePosition(rigidbody.position + (-Vector3.right * speed * movementSlow  * Time.deltaTime));
-	}
-	if ((playerPositionY > myPositionY))
-	{
-		rigidbody.MovePosition(rigidbody.position + (Vector3.up * speed * movementSlow  * Time.deltaTime));
-	}
-	if ((playerPositionY < myPositionY))
-	{
-		rigidbody.MovePosition(rigidbody.position + (-Vector3.up * speed * movementSlow  * Time.deltaTime));
-	}
-	if ((playerPositionZ > myPositionZ))
-	{
-		rigidbody.MovePosition(rigidbody.position + (Vector3.forward * speed * movementSlow  * Time.deltaTime));
-	}
-	if ((playerPositionZ < myPositionZ))
-	{
-		rigidbody.MovePosition(rigidbody.position + (-Vector3.forward * speed * movementSlow  * Time.deltaTime));
-	}
-	if (readyToAttack == true && (Vector3.Distance(this.transform.position, target.transform.position) < attackRange)){
+	if (readyToAttack == true && (Vector3.Distance(this.transform.position, target.transform.position) < attackRange)) {
 		AttackPhase1();
 		NotReadyToAttack();
 	}

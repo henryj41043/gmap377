@@ -53,7 +53,7 @@ function DoMyWindow (windowID : int) {
 }
 function OnGUI () {
 
-	GUI.color = Color.white ;        
+	GUI.color = Color.white;        
     	windowRect0 = GUI.Window (1, windowRect0, DoMyWindow, "MENU");
     
     	

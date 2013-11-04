@@ -25,9 +25,11 @@ private var windupMovement : boolean;
 
 function Start () {
 	currentHit = 0;
+	/*
 	//add para here for testing
 	damage = OnStartGame.paraArray[2];
 	//
+	*/
 	baseDamage = damage;
 	baseRange = range;
 	ReadyToAttack();

@@ -18,9 +18,11 @@ var height = 5.0;
 // How much we 
 var heightDamping = 2.0;
 var rotationDamping = 3.0;
+/*
 //add para here for testing
 distance = OnStartGame.paraArray[0];
 //
+*/
 // Place the script in the Camera-Control group in the component menu
 @script AddComponentMenu("Camera-Control/Smooth Follow")
 

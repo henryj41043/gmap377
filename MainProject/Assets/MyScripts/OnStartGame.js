@@ -58,21 +58,25 @@ function OnGUI () {
     
     	
     	
-    	paraArray[0] = System.Int32.Parse(PlayerCamera); // SmoothFollow(distance var)
-    	paraArray[1] = System.Int32.Parse(PlayerRunSpeed);// CharacterMotor(MaxForwardSpeed)
+    	paraArray[0] = System.Int32.Parse(PlayerCamera); // SmoothFollow(distance var)	
+    	paraArray[1] = System.Int32.Parse(PlayerRunSpeed);// CharacterMotor(MaxForwardSpeed)	
     	paraArray[2] = System.Int32.Parse(PlayerBasicAttack);//BasicAttack(damage)
-    	paraArray[3] = System.Int32.Parse(PlayerHP);// PlayerHealth(CurHealth)
+    	paraArray[3] = System.Int32.Parse(PlayerHP);// PlayerHealth(CurHealth) 	
+    	
     	paraArray[4] = System.Int32.Parse(EnemyRunSpeed);//Enemy(speed)
+    	
     	paraArray[5] = System.Int32.Parse(EnemyHP);// receiveDamage(MaximumHealth)
     	paraArray[6] = System.Int32.Parse(EnemyDamage);//Enemy(damage)
     	paraArray[7] = System.Int32.Parse(EnemyAttackSpeed);//Enemy(attackSpeed)
+    	
+    	
     	//paraArray[8] = System.Int32.Parse(EnemySpawn);
     	//paraArray[9] = System.Int32.Parse(HitsPerCandy);
     	
     if(GUI.Button(Rect(500,180,100,100),"Go!"))
 	{
 			Application.LoadLevel("Main");
-			Debug.Log(PlayerHP);
+			//Debug.Log(PlayerHP);
 	}  	
 	
 }

@@ -40,9 +40,15 @@ function OnGUI(){
 	if(paused){
 		GUI.color = Color.white;
 		windowRect = GUI.Window(0, windowRect, windowFunc, "Pause Menu");
+		
 		paraArray[0] = System.Int32.Parse(PlayerCamera);
 		SmoothFollow.distance = paraArray[0];
-    	paraArray[1] = System.Int32.Parse(PlayerRunSpeed);	
+		
+    	paraArray[1] = System.Int32.Parse(PlayerRunSpeed);
+    	CharacterMotorMovement.maxForwardSpeed = paraArray[1];
+    	CharacterMotorMovement.maxSidewaysSpeed = paraArray[1];
+    	CharacterMotorMovement.maxBackwardsSpeed = paraArray[1];
+    	
     	paraArray[2] = System.Int32.Parse(PlayerBasicAttack);
     	paraArray[3] = System.Int32.Parse(PlayerHP);	
     	paraArray[4] = System.Int32.Parse(EnemyRunSpeed);

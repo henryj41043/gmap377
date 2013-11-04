@@ -30,9 +30,9 @@ class CharacterMotorMovement {
 	*/
 	
 	
-	var maxForwardSpeed : float = 10.0;
-	var maxSidewaysSpeed : float = 10.0;
-	var maxBackwardsSpeed : float = 10.0;
+	public static var maxForwardSpeed : float = 10.0;
+	public static var maxSidewaysSpeed : float = 10.0;
+	public static var maxBackwardsSpeed : float = 10.0;
 	
 	
 	// Curve for multiplying speed based on slope (negative = downwards)

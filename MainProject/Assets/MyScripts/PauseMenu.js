@@ -40,7 +40,8 @@ function OnGUI(){
 	if(paused){
 		GUI.color = Color.white;
 		windowRect = GUI.Window(0, windowRect, windowFunc, "Pause Menu");
-		paraArray[0] = System.Int32.Parse(PlayerCamera);	
+		paraArray[0] = System.Int32.Parse(PlayerCamera);
+		SmoothFollow.distance = paraArray[0];
     	paraArray[1] = System.Int32.Parse(PlayerRunSpeed);	
     	paraArray[2] = System.Int32.Parse(PlayerBasicAttack);
     	paraArray[3] = System.Int32.Parse(PlayerHP);	

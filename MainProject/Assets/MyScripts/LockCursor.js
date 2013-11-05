@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 ﻿function Start ()
+=======
+﻿/*
+Put this on a GameObject unattached to anything with a GUIText component. 
+*/
+
+function Start ()
+>>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 {
 	// Start out in paused mode in web player
 	

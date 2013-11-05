@@ -54,14 +54,17 @@ function OnGUI(){
     	
     	paraArray[3] = System.Int32.Parse(PlayerHP);
     	PlayerHealth.maxHealth = paraArray[3];
-    	//BroadcastMessage("UpdateHealthPlayer", SendMessageOptions.DontRequireReceiver);
+    	GameObject.FindGameObjectWithTag("Player").SendMessage("UpdateHealthPlayer");
     		
     	paraArray[4] = System.Int32.Parse(EnemyRunSpeed);
     	MeleeEnemy.moveSpeed = paraArray[4];
     	
     	paraArray[5] = System.Int32.Parse(EnemyHP);
     	MeleeEnemy.maximumHealth = paraArray[5];
-    	//BroadcastMessage("UpdateHealth", SendMessageOptions.DontRequireReceiver);
+    	var temp = GameObject.FindGameObjectsWithTag("Enemy");
+    	for(var k = 0; k < temp.length; k++){
+    		temp[k].SendMessage("UpdateHealth");
+    	}
     	
     	paraArray[6] = System.Int32.Parse(EnemyDamage);
     	MeleeEnemy.damage = paraArray[6];

@@ -8,7 +8,7 @@ var PlayerCamera : String = "10";
 var PlayerRunSpeed : String = "10";
 var PlayerBasicAttack : String = "100";
 var PlayerHP : String = "10";
-var EnemyRunSpeed: String = "1";
+var EnemyRunSpeed: String = "3";
 var EnemyHP: String = "100";
 var EnemyDamage: String = "1";
 var EnemyAttackSpeed: String = "1";
@@ -54,10 +54,18 @@ function OnGUI(){
     	
     	paraArray[3] = System.Int32.Parse(PlayerHP);
     	PlayerHealth.maxHealth = paraArray[3];
+    	//BroadcastMessage("UpdateHealthPlayer", SendMessageOptions.DontRequireReceiver);
     		
     	paraArray[4] = System.Int32.Parse(EnemyRunSpeed);
+    	MeleeEnemy.moveSpeed = paraArray[4];
+    	
     	paraArray[5] = System.Int32.Parse(EnemyHP);
+    	MeleeEnemy.maximumHealth = paraArray[5];
+    	//BroadcastMessage("UpdateHealth", SendMessageOptions.DontRequireReceiver);
+    	
     	paraArray[6] = System.Int32.Parse(EnemyDamage);
+    	MeleeEnemy.damage = paraArray[6];
+    	
     	paraArray[7] = System.Int32.Parse(EnemyAttackSpeed);
 	}
 }

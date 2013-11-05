@@ -8,12 +8,12 @@ var maximumDropRange : float;
 var manager : GameObject;
 private var candyDrop : int;
 
-var maximumHealth : int;
+public static var maximumHealth : int = 100;
 private var currentHealth : int;
 
-var moveSpeed : float;
+public static var moveSpeed : float = 3;
 var attackRange : float;
-var damage : int;
+public static var damage : int = 1;
 var phaseChange1 : float;
 var phaseChange2 : float;
 var hitbox : GameObject;
@@ -41,6 +41,10 @@ function Start () {
 	ReadyToAttack();
 	currentHealth = maximumHealth;
 	rotationLock = false;
+}
+
+function UpdateHealth(){
+	currentHealth = maximumHealth;
 }
 
 function Update () {

@@ -17,7 +17,7 @@ function Start () {
 	AddHearts();
 }
 
-function Update(){
+function UpdateHealthPlayer(){
 	curHealth = maxHealth;
 	AddHearts();
 }

@@ -10,7 +10,7 @@ var hitbox : GameObject;
 var currentHit : int;
 var finalHit : int;
 
-var damage : float;
+public static var damage : float = 100;
 private var baseDamage : float;
 var range : float;
 private var baseRange : float;
@@ -76,6 +76,8 @@ function CountCurrentHit () {
 }
 
 function Update () {
+	baseDamage = damage;
+	baseRange = range;
 	if (Input.GetMouseButtonDown(0) && readyToAttack == true) {
 		CountCurrentHit();
 		if (currentHit == 1) {

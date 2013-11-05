@@ -50,7 +50,11 @@ function OnGUI(){
     	CharacterMotorMovement.maxBackwardsSpeed = paraArray[1];
     	
     	paraArray[2] = System.Int32.Parse(PlayerBasicAttack);
-    	paraArray[3] = System.Int32.Parse(PlayerHP);	
+    	BasicAttack.damage = paraArray[2];
+    	
+    	paraArray[3] = System.Int32.Parse(PlayerHP);
+    	PlayerHealth.maxHealth = paraArray[3];
+    		
     	paraArray[4] = System.Int32.Parse(EnemyRunSpeed);
     	paraArray[5] = System.Int32.Parse(EnemyHP);
     	paraArray[6] = System.Int32.Parse(EnemyDamage);
@@ -80,6 +84,6 @@ function windowFunc(id : int){
 	GUI.Label (Rect (50, 200, 100, 20), "EnemyDamage");
 	EnemyDamage = GUI.TextField (Rect (200, 200, 100, 20), EnemyDamage, 25);
 	
-	GUI.Label (Rect (50, 230, 120, 20), "EnemyAttackSpeedd");
+	GUI.Label (Rect (50, 230, 120, 20), "EnemyAttackSpeed");
 	EnemyAttackSpeed = GUI.TextField (Rect (200, 230, 100, 20), EnemyAttackSpeed, 25);
 }

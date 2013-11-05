@@ -1,4 +1,4 @@
-﻿var maxHealth : int;
+﻿public static var maxHealth : int = 10;
 private var curHealth : int;
 var heartGUI:GUITexture;
 private var Xstart:float = -0.138;
@@ -17,8 +17,16 @@ function Start () {
 	AddHearts();
 }
 
+function Update(){
+	curHealth = maxHealth;
+	AddHearts();
+}
+
 function AddHearts(){
 	spacingX = Xstart;
+	for(var j = 0; j < hearts.length; j++){
+		Destroy(hearts[j]);
+	}
 	for(var i = 0; i < curHealth ; i++){
 		hearts[i] = Instantiate(heartGUI, Vector3(spacingX, spacingY, 0), Quaternion.identity );
 		spacingX += Xinterval;

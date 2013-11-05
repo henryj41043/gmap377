@@ -2,24 +2,6 @@
 
 private var movement : CharacterMotor;
 
-<<<<<<< HEAD
-var phaseChange : float;
-private var readyToDodge : boolean;
-
-var travelDistance : float;
-var recoverSpeed : int;
-
-private var moveDirection : Vector3 = Vector3.zero;
-
-function Start () {
-	readyToDodge = true;
-}
-
-function Update () {
-	if (Input.GetKeyDown("space") && readyToDodge == true) {
-		DodgePhase1();
-		readyToDodge = false;
-=======
 var phaseChange1 : float;
 var phaseChange2 : float;
 private var readyToDodge : boolean;
@@ -80,32 +62,16 @@ function Update () {
 	}
 	if (dodging == true) {
 		controller.Move(moveDirection * Time.deltaTime * travelSpeed * dodgeFactor);
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 	}
 }
 
 function DodgePhase1 () {
-<<<<<<< HEAD
-	Invoke("DodgePhase2", phaseChange);
-=======
 	Invoke("DodgePhase2", phaseChange1);
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 	movement = GetComponent(CharacterMotor);
 	movement.enabled = false;
 }
 
 function DodgePhase2 () {
-<<<<<<< HEAD
-	Invoke("DodgePhase3", phaseChange);
-	
-	transform.position = transform.position + (travelDistance * transform.forward);
-}
-
-function DodgePhase3 () {
-	movement = GetComponent(CharacterMotor);
-	movement.enabled = true;
-	readyToDodge = true;
-=======
 	dodging = true;
 	Physics.IgnoreLayerCollision(8, 9, true);
 	Invoke("DodgePhase3", phaseChange2);
@@ -122,5 +88,4 @@ function DodgeEnd () {
 	movement = GetComponent(CharacterMotor);
 	movement.enabled = true;
 	ReadyToDodge();
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 }

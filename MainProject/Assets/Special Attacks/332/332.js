@@ -1,13 +1,5 @@
 ﻿#pragma strict
 
-<<<<<<< HEAD
-function Start () {
-
-}
-
-function Update () {
-
-=======
 var SweetFrostEffect : GameObject;
 
 var radius : float;
@@ -25,5 +17,4 @@ function SweetFrost () {
 	SweetFrost.SendMessage("DamagePerTick", damagePerTick);
 	SweetFrost.SendMessage("TickInterval", tickInterval);
 	SweetFrost.SendMessage("Duration", duration);
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 }

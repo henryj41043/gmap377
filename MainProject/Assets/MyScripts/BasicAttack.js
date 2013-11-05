@@ -1,32 +1,5 @@
 ﻿#pragma strict
 
-<<<<<<< HEAD
-var movement : CharacterMotor;
-
-var currentHit : int;
-var phaseChange : float;
-var ReadyToAttack : boolean;
-
-var hitbox : GameObject;
-
-var damage : int;
-var range : int;
-var windupMovementSpeed : int;
-
-var hitInfo : RaycastHit;
-
-private var moveDirection : Vector3 = Vector3.zero;
-
-function Start () {
-	currentHit = 0;
-	ReadyToAttack = true;
-}
-
-function Update () {
-	if (Input.GetMouseButtonDown(0) && ReadyToAttack == true) {
-		AttackPhase1();
-		ReadyToAttack = false;
-=======
 private var movement : CharacterMotor;
 
 var phaseChange1 : float;
@@ -121,42 +94,18 @@ function Update () {
 	}
 	if (windupMovement == true) {
 		controller.Move(moveDirection * Time.deltaTime * windupMovementSpeed);	
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 	}
 }
 
 function AttackPhase1 () {
-<<<<<<< HEAD
-	Invoke("AttackPhase2", phaseChange);
-=======
 	windupMovement = true;
 	moveDirection = transform.forward;
 	Invoke("AttackPhase2", phaseChange1);
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 	movement = GetComponent(CharacterMotor);
 	movement.enabled = false;
 }
 
 function AttackPhase2 () {
-<<<<<<< HEAD
-	//Striking phase, deal damage
-	Invoke("AttackPhase3", phaseChange);
-	hitbox.SetActive(true);
-	
-	
-	var fwd = transform.TransformDirection (Vector3.forward);
-	if (Physics.Raycast (transform.position, fwd, hitInfo, range) && hitInfo.transform.tag == "Enemy") {
-		Debug.Log("Dealing damage to enemy");
-		hitInfo.collider.gameObject.SendMessage("TakeDamage", damage);
-	}
-}
-
-function AttackPhase3 () {
-	//hitbox.SetActive(false);
-	movement = GetComponent(CharacterMotor);
-	movement.enabled = true;
-	ReadyToAttack = true;
-=======
 	windupMovement = false;
 	//Striking phase, deal damage
 	Invoke("AttackPhase3", phaseChange2);
@@ -177,6 +126,5 @@ function AttackPhase3 () {
 	movement = GetComponent(CharacterMotor);
 	movement.enabled = true;
 	ReadyToAttack();
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 	hitbox.SetActive(false);
 }

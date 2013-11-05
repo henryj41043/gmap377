@@ -1,13 +1,5 @@
 ﻿#pragma strict
 
-<<<<<<< HEAD
-function Start () {
-
-}
-
-function Update () {
-
-=======
 var ExplosionEffect : GameObject;
 
 var damageIncrease : float;
@@ -53,5 +45,4 @@ function FullExplode() {
 	Explosion.SendMessage("Radius", fullExplodeRadius);
 	Explosion.SendMessage("Duration", fullExplodeDuration);
 	RockCandyArmorOn = false;
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 }

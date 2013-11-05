@@ -8,21 +8,12 @@ var maximumDropRange : float;
 var manager : GameObject;
 private var candyDrop : int;
 
-<<<<<<< HEAD
-var maximumHealth : int;
-private var currentHealth : int;
-
-var moveSpeed : float;
-var attackRange : float;
-var damage : int;
-=======
 public static var maximumHealth : int = 100;
 private var currentHealth : int;
 
 public static var moveSpeed : float = 3;
 var attackRange : float;
 public static var damage : int = 1;
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 var phaseChange1 : float;
 var phaseChange2 : float;
 var hitbox : GameObject;
@@ -52,13 +43,10 @@ function Start () {
 	rotationLock = false;
 }
 
-<<<<<<< HEAD
-=======
 function UpdateHealth(){
 	currentHealth = maximumHealth;
 }
 
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 function Update () {
 	var controller : CharacterController = GetComponent(CharacterController);
 	var target : GameObject = GameObject.FindGameObjectWithTag("Player");

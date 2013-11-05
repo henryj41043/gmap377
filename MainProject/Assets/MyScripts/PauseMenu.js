@@ -3,8 +3,6 @@
 var mySkin : GUISkin;
 private var windowRect : Rect;
 private var paused : boolean = false;
-<<<<<<< HEAD
-=======
 private var togglePlayer: boolean = false;
 private var toggleEnemy: boolean = false;
 private var toggleSpecialAttack1: boolean = false;
@@ -26,7 +24,6 @@ var EnemyHP: String = "100";
 var EnemyDamage: String = "1";
 var EnemyAttackSpeed: String = "1";
 static var paraArray = new Array();
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 
 function Start () {
 	windowRect = new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 400, 400);
@@ -48,22 +45,11 @@ function Update () {
 	}else{
 		Time.timeScale = 1;
 	}
-<<<<<<< HEAD
-=======
 	   GetComponent.<LockCursor>().enabled = true;
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 }
 
 function OnGUI(){
 	if(paused){
-<<<<<<< HEAD
-		windowRect = GUI.Window(0, windowRect, windowFunc, "Pause Menu");
-	}
-}
-
-function windowFunc(id : int){
-
-=======
 	
 		GetComponent.<LockCursor>().enabled = false;
 		
@@ -402,5 +388,4 @@ function windowFunc(id : int){
 		GUI.BringWindowToFront(id); GUI.FocusWindow(id);
 		
 	
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 }

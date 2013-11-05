@@ -51,21 +51,13 @@ using System.Linq;
 public class CircularGravity : MonoBehaviour
 {
     #region Properties
-<<<<<<< HEAD
-
-=======
 	
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
     //Enable/Disable CircularGravity
     public bool enable = true;
 
     //Power for the force, can be negative or positive
     public float forcePower = 10f;
-<<<<<<< HEAD
-
-=======
 	
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
     //Radius properties
     [System.Serializable]
     public class RadiusProperties

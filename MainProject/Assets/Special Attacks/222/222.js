@@ -1,13 +1,5 @@
 ﻿#pragma strict
 
-<<<<<<< HEAD
-function Start () {
-
-}
-
-function Update () {
-
-=======
 var GummyBindEffect : Rigidbody;
 var GummyBindLandingZone : GameObject;
 
@@ -25,5 +17,4 @@ function GummyBind () {
 	GummyBind.SendMessage("PullStrength", pullStrength);
 	GummyBind.SendMessage("PullRadius", pullRadius);
 	GummyBind.SendMessage("PullDuration", pullDuration);
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 }

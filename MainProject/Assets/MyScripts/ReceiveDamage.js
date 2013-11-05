@@ -3,20 +3,11 @@
 var chocolateDrop : GameObject;
 var gummyDrop : GameObject;
 var lollipopDrop : GameObject;
-<<<<<<< HEAD
-var candyDrop : int;
-
-var maximumHealth : int;
-var currentHealth : int;
-
-var damage : int;
-=======
 var manager : GameObject;
 private var candyDrop : int;
 
 var maximumHealth : int;
 private var currentHealth : int;
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 
 function Start () {
 	currentHealth = maximumHealth;
@@ -28,11 +19,7 @@ function Update () {
 	}
 }
 
-<<<<<<< HEAD
-function TakeDamage (damage : int) {
-=======
 function ApplyDamage (damage : int) {
->>>>>>> 447e36a73d7f1336fc81d92d936fdeb47c565cb7
 	currentHealth -= damage;
 }
 

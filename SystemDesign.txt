@@ -1,0 +1,33 @@
+#-------------------------------------------------------------------------------------------------------------------
+This is our code design document where we will describe overall architecture of the system and document any problems
+-------------------------------------------------------------------------------------------------------------------#
+
+NOTE: This is a living document and will be continually updated to reflect the current design of the system and our progress towards that design
+      Also, we will have a UML diagram soon!
+
+
+Section 1: Design
+
+- The core game will have a over arching module (referenced as the "director" in this document) that runs in the background
+- This director will manage the menu system, map/player/enemy spawning, and save states/win conditions and other globally triggered events
+- There will be a general AI manager that the director will talk to that is responsible for all of the actions of enemies, bosses, and friendly NPCs
+- There will be a weapon manager that the director will talk to that will handle all of the weapon changing dynamics
+- All other scripts that will be attached to the player directly will be described in more detail later on
+
+	section 1a: Director
+		- More detail to come
+
+
+	section 1b: AI Manager
+		- More detail to come
+
+
+	section 1c: Dynamic Weapon Evolution Manager
+		- More detail to come
+
+
+
+Section 2: Challenges/Problems
+
+- As of right now, the biggest hurdle will be creating the core AI and dynamic weapon evolution manager
+- More problems/challenges and our solutions to them will be continually posted here

@@ -6,6 +6,6 @@ Put this on a GameObject unattached to anything. Replace the Input.GetKeyDown wi
 
 function Update () {
 	if (Input.GetKeyDown (KeyCode.Return)) { 
-		Application.LoadLevel(1); 
+		Application.LoadLevel(0); 
 	} 
 }

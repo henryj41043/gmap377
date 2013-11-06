@@ -1,8 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyScripts/Restart.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyScripts\PauseMenu.js">
     <Files>
-      <File FileName="Assets/MyScripts/Restart.js" Line="9" Column="26" />
+      <File FileName="Assets\MyScripts\PauseMenu.js" Line="385" Column="12" />
+      <File FileName="Assets\MyScripts\Restart.js" Line="9" Column="26" />
+      <File FileName="Assets\Special Attacks\111\MeltingPot.js" Line="9" Column="15" />
+      <File FileName="Assets\Special Attacks\112\ChocolateTruffle.js" Line="10" Column="15" />
+      <File FileName="Assets\Special Attacks\122\StickySlide.js" Line="5" Column="15" />
+      <File FileName="Assets\MyScripts\PlayerHealth.js" Line="67" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

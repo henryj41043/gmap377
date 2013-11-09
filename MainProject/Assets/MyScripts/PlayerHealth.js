@@ -49,7 +49,11 @@ private var windowRect : Rect;
 	
 function Die () {
 	BroadcastMessage("PlayDeath");
-	Invoke("Restart", 1);
+	SendMessage("AbleToMove", false);
+	SendMessage("AbleToAttack", false);
+	SendMessage("AbleToDodge", false);
+	SendMessage("AbleToSpecial", false);
+	SendMessage("AbleToRotate", false);
 	//Destroy(this.gameObject);
 }
 

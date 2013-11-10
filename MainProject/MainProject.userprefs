@@ -2,7 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyScripts/Transformation.js">
     <Files>
-      <File FileName="Assets/MyScripts/Transformation.js" Line="1" Column="1" />
+      <File FileName="Assets/MyScripts/Transformation.js" Line="31" Column="4" />
+      <File FileName="Assets/MyScripts/CandyDrop.js" Line="1" Column="1" />
+      <File FileName="Assets/MyScripts/CollectItems.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

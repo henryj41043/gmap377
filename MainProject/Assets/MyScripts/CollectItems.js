@@ -1,6 +1,11 @@
 ﻿private var Slot1 : int;
 private var Slot2 : int;
 private var Slot3 : int;
+
+private var ChocolateCandy : int;
+private var GummyCandy : int;
+private var LollipopCandy : int;
+
 private var CurrentlyOpenSlot : int;
 
 private var StandingOverCandyDrop : int;
@@ -20,8 +25,9 @@ function ResetSlots () {
 }
 
 function Update () {
-	CheckSlots();
-	if (Input.GetMouseButtonDown(1)) {
+	//CheckSlots();
+	//if (Input.GetMouseButtonDown(1)) {
+	/*
 		if (CurrentlyOpenSlot == 1 && StandingOverCandyDrop != 0) {
 			Slot1 = StandingOverCandyDrop;
 			DestroyCandy = true;
@@ -37,16 +43,49 @@ function Update () {
 			DestroyCandy = true;
 			Invoke("TurnOffDestroyCandy", 0.25);
 		}
+		*/
+		
+		if (StandingOverCandyDrop == 1){
+		
+			ChocolateCandy += 1;
+			DestroyCandy = true;
+			//Invoke("TurnOffDestroyCandy", 0.25);
+		
+		}
+		if (StandingOverCandyDrop == 2){
+		
+			GummyCandy += 1;
+			DestroyCandy = true;
+			//Invoke("TurnOffDestroyCandy", 0.25);
+		
+		}
+		if (StandingOverCandyDrop == 3){
+		
+			LollipopCandy += 1;
+			DestroyCandy = true;
+			//Invoke("TurnOffDestroyCandy", 0.25);	
+		}
+		
+		/*
 		if (CurrentlyOpenSlot == 0) {
 			ResetSlots();
 		}
+		
 	}
+	
 	if (Input.GetKeyDown("e")) {
 		ResetSlots();
 	}
+	*/
 }
 
 function OnGUI() {
+
+	
+	
+	GUI.Label(Rect(0, 50, 100, 150), ChocolateCandy + ", " + GummyCandy  + ", " + LollipopCandy);
+	
+/*
 	GUI.Label(Rect(0, 50, 100, 150), Slot1 + ", " + Slot2 + ", " + Slot3);
 	if (Slot1 == 1 && Slot2 == 1 && Slot3 == 1) {
 		GUI.Label(Rect(0, 75, 100, 175), "Melting Pot");
@@ -88,6 +127,9 @@ function OnGUI() {
 		GUI.Label(Rect(0, 75, 150, 175), "Rock Candy Armor");
 		BroadcastMessage("SpecialAttackReady", 333);
 	}
+	*/
+	
+
 }
 
 function TurnOffDestroyCandy() {
@@ -109,7 +151,7 @@ function StandingOnGummyDrop () {
 function StandingOnLollipopDrop () {
 	StandingOverCandyDrop = 3;
 }
-
+/*
 function CheckSlots () {
 	if (Slot1 == 0) {
 		CurrentlyOpenSlot = 1;
@@ -124,7 +166,7 @@ function CheckSlots () {
 		CurrentlyOpenSlot = 0;
 	}
 }
-
+*/
 function OnTriggerStay (object:Collider) {
 	if (object.tag == "ChocolateDrop" || object.tag == "GummyDrop" || object.tag == "LollipopDrop") {
 		if (DestroyCandy == true) {

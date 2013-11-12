@@ -1,10 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyScripts/Transformation.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\PlayerControls.js">
     <Files>
-      <File FileName="Assets/MyScripts/Transformation.js" Line="31" Column="4" />
-      <File FileName="Assets/MyScripts/CandyDrop.js" Line="1" Column="1" />
-      <File FileName="Assets/MyScripts/CollectItems.js" Line="1" Column="1" />
+      <File FileName="Assets\MyScripts\Transformation.js" Line="1" Column="1" />
+      <File FileName="Assets\MyScripts\CandyDrop.js" Line="1" Column="1" />
+      <File FileName="Assets\MyScripts\CollectItems.js" Line="1" Column="1" />
+      <File FileName="Assets\Player\PlayerControls.js" Line="228" Column="23" />
+      <File FileName="Assets\Player\HitboxR0.js" Line="22" Column="2" />
+      <File FileName="Assets\Player\HitboxL0.js" Line="22" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

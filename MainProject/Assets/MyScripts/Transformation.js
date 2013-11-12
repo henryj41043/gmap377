@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 private var transformEnabled = false;
 var candyBarSize = 10;
 var cooldownTime = 10;
@@ -18,17 +18,17 @@ function Start () {
 function Update () {
 	if(transformEnabled){
 		if(Input.GetKeyDown("1")){
-			PlayerControls.currentTransformation(1);
+			//PlayerControls.CurrentTransformation(1);
 			inCooldown = true;
 			transformEnabled = false;
 		}
 		if(Input.GetKeyDown("2")){
-			PlayerControls.currentTransformation(2);
+			//PlayerControls.CurrentTransformation(2);
 			inCooldown = true;
 			transformEnabled = false;
 		}
 		if(Input.GetKeyDown("3")){
-			PlayerControls.currentTransformation(3);
+			//PlayerControls.CurrentTransformation(3);
 			inCooldown = true;
 			transformEnabled = false;
 		}

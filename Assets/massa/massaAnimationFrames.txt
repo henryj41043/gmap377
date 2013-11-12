@@ -1,13 +1,16 @@
-Idle frames: 6-45
-Walking frames: 70-110
+(Ignore the beginning from frames 1-49)
+Idle frames: 50-89
+Walking frames: 114-154
 Running frames: 115-128
-Attack 1 wind-up: 132 - 137
-Attack 1 swing: 138 - 147
-Attack 2 wind-up: 148 - 153
-Attack 2 swing: 154 - 160
-Attack 3 wind-up: 161 - 169
-Attack 3 swing: 170 - 176
-Special Attack: 188 - 207
-Dodge Roll: 222 - 243
-Recoil frames: 247 - 262
-Death frames: 274 - 300
+Attack 1 wind-up: 176 - 183
+Attack 1 swing: 184 - 188
+Attack 2 wind-up: 189 - 194
+Attack 2 swing: 195 - 200
+Attack 3 wind-up: 201 - 212
+Attack 3 swing: 213 - 220
+rClick Attack wind-up: 228 - 244
+rClick Attack swing: 245 - 254 
+Special Attack (old stuff): 265 - 287
+Dodge Roll: 299 - 320
+Recoil frames: 324 - 340
+Death frames: 350 - 380

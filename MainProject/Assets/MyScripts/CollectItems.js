@@ -1,11 +1,12 @@
 ﻿private var StandingOverCandyDrop : int;
 
 private var DestroyCandy : boolean;
+private var time : double = 0.0;
 
 private var transformEnabled = false;
-var candyBarSize = 10.0;
-var cooldownTime = 10;
-private var cooldown = 0;
+private var candyBarSize = 5.0;
+private var cooldownTime = 5.0;
+private var cooldown = 0.0;
 private var candyCount = 0.0;
 private var inCooldown = false;
 var candyBarGUI : GUITexture;
@@ -41,8 +42,13 @@ function Update () {
 		}
 	}
 	
-	if(candyCount == candyBarSize && cooldown == 0){
+	if(candyCount == candyBarSize && cooldown == 0.0){
+		cooldown = cooldownTime;
 		transformEnabled = true;
+	}
+	
+	if(cooldown == 0.0){
+		inCooldown = false;
 	}
 	
 	updateCandyBarGUI();
@@ -81,11 +87,25 @@ function OnTriggerStay (object:Collider) {
 
 function addCandy(){
 	if(candyCount < candyBarSize){
-		candyCount++;
+		candyCount = candyCount + 1.0;
 	}
 }
 
 function updateCandyBarGUI(){
-	var candyBarFraction = Mathf.Clamp01(candyCount / candyBarSize);
-	candyBarGUI.pixelInset.xMax = candyBarGUI.pixelInset.xMin + (candyBarGUIWidth * candyBarFraction);
+	if(inCooldown == false){
+		var candyBarFraction = Mathf.Clamp01(candyCount / candyBarSize);
+		candyBarGUI.pixelInset.xMax = candyBarGUI.pixelInset.xMin + (candyBarGUIWidth * candyBarFraction);
+	}
+	if(inCooldown == true){
+		time += Time.deltaTime;
+		if(time >= 1.0){
+			time -= 1.0;
+			cooldown = cooldown - 1.0;
+			var cooldownFraction = Mathf.Clamp01(cooldown / cooldownTime);
+			candyBarGUI.pixelInset.xMax = candyBarGUI.pixelInset.xMin + (candyBarGUIWidth * cooldownFraction);
+		}
+		if(cooldown == 0.0){
+			candyCount = 0.0;
+		}
+	}
 }

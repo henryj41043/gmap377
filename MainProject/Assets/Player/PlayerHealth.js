@@ -1,18 +1,13 @@
 ﻿public static var maxHealth : int = 10;
 private var curHealth : int;
 var heartGUI:GUITexture;
-private var Xstart:float = -0.138;
+private var Xstart:float = 0.09; //-0.138
 private var spacingX:float;
-private var spacingY:float = 0.63;
+private var spacingY:float = 0.5; //0.63
 private var Xinterval:float = 0.055;
 private var hearts = new Array();
 
 function Start () {
-	/*
-	//add para here for testing
-	maxHealth = OnStartGame.paraArray[3];
-	//
-	*/
 	curHealth = maxHealth;
 	AddHearts();
 }
@@ -54,7 +49,6 @@ function Die () {
 	SendMessage("AbleToDodge", false);
 	SendMessage("AbleToSpecial", false);
 	SendMessage("AbleToRotate", false);
-	//Destroy(this.gameObject);
 }
 
 function ModifyHearts(lostHearts : int){

@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player/PlayerControls.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyScripts/Transformation.js">
     <Files>
       <File FileName="Assets/Player/PlayerHealth.js" Line="1" Column="1" />
       <File FileName="Assets/Player/PlayerControls.js" Line="1" Column="1" />
+      <File FileName="Assets/MyScripts/Transformation.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

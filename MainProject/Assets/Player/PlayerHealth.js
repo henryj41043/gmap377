@@ -1,9 +1,9 @@
 ﻿public static var maxHealth : int = 10;
 private var curHealth : int;
 var heartGUI:GUITexture;
-private var Xstart:float = 0.08; //-0.138
+private var Xstart:float = 0.18; //-0.138
 private var spacingX:float;
-private var spacingY:float = 0.66; //0.63
+private var spacingY:float = 0.0; //0.63
 private var Xinterval:float = 0.028;
 private var hearts = new Array();
 

@@ -2,9 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player/PlayerControls.js">
     <Files>
-      <File FileName="Assets/Player/PlayerHealth.js" Line="1" Column="1" />
-      <File FileName="Assets/Player/PlayerControls.js" Line="438" Column="31" />
-      <File FileName="Assets/MyScripts/CollectItems.js" Line="52" Column="55" />
+      <File FileName="Assets/Player/PlayerHealth.js" Line="4" Column="32" />
+      <File FileName="Assets/Player/PlayerControls.js" Line="178" Column="44" />
+      <File FileName="Assets/MyScripts/CollectItems.js" Line="1" Column="1" />
+      <File FileName="Assets/Special Attacks/112/ChocolateTruffle.js" Line="19" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

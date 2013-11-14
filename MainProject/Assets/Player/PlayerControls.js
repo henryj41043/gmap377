@@ -175,7 +175,7 @@ function Update () {
 				}
 			}
 			if (Input.GetMouseButtonDown(1)) {
-				GetComponentInChildren(FondueStrike).FondueStrike();
+				GetComponentInChildren(ChocolateTruffle).StickyTruffle();
 			}
 		}
 		
@@ -241,7 +241,7 @@ function Update () {
 				}
 			}
 			if (Input.GetMouseButtonDown(1)) {
-				GetComponentInChildren(TruffleFrag).TruffleFrag();
+				GetComponentInChildren(SweetFrost).SweetFrost();
 			}
 		}
 	}

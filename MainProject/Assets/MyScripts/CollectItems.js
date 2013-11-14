@@ -26,17 +26,17 @@ function Update () {
 		
 	if(transformEnabled){
 		if(Input.GetKeyDown("1")){
-			//PlayerControls.CurrentTransformation(1);
+			GetComponent(PlayerControls).CurrentTransformation(1);
 			inCooldown = true;
 			transformEnabled = false;
 		}
 		if(Input.GetKeyDown("2")){
-			//PlayerControls.CurrentTransformation(2);
+			GetComponent(PlayerControls).CurrentTransformation(2);
 			inCooldown = true;
 			transformEnabled = false;
 		}
 		if(Input.GetKeyDown("3")){
-			//PlayerControls.CurrentTransformation(3);
+			GetComponent(PlayerControls).CurrentTransformation(3);
 			inCooldown = true;
 			transformEnabled = false;
 		}
@@ -49,6 +49,7 @@ function Update () {
 	
 	if(cooldown == 0.0){
 		inCooldown = false;
+		GetComponent(PlayerControls).CurrentTransformation(0);
 	}
 	
 	updateCandyBarGUI();

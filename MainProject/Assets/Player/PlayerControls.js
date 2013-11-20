@@ -9,11 +9,9 @@ private var moveFactor : float;
 
 //Attack parameters
 var ableToAttack : boolean;
-var hitboxL0 : Rigidbody;
 var baseAttackDamageL0 : float;
 var baseAttackRangeL0 : float;
 var baseAttackDurationL0 : float;
-var baseAttackHitstunDurationL0 : float;
 var attackMovementSpeedL0 : float;
 var attackWindupPeriodL0 : float;
 var attackStrikingPeriodL0 : float;
@@ -25,11 +23,9 @@ var finalHitL0 : int;
 var currentHitL0 : int;
 private var attackFactorL0 : float;
 private var attackingL0 : boolean;
-var hitboxR0 : Rigidbody;
 var baseAttackDamageR0 : float;
 var baseAttackRangeR0 : float;
 var baseAttackDurationR0 : float;
-var baseAttackHitstunDurationR0 : float;
 var attackWindupPeriodR0 : float;
 var attackStrikingPeriodR0 : float;
 var attackCooldownPeriodR0 : float;
@@ -48,12 +44,14 @@ private var dodging : boolean;
 
 //Special parameters
 var ableToSpecial : boolean;
+var hitboxL0 : Rigidbody;
+var hitboxR0 : Rigidbody;
 
 //Health parameters
-private var amIDead : boolean;
+var hitstunDuration : float;
 
 //Other parameters
-var playerTransformation : int;
+private var playerTransformation : int = 0;
 var gravity : float;
 var ableToRotate : boolean;
 var cameraTarget : GameObject;
@@ -61,7 +59,6 @@ private var moveDirection : Vector3 = Vector3.zero;
 private var controller : CharacterController;
 
 function Start () {
-	amIDead = false;
 	AbleToMove(true);
 	AbleToAttack(true);
 	AbleToDodge(true);
@@ -82,28 +79,21 @@ function Update () {
 			moveFactor = moveForwardFactor;
 			moveDirection = Vector3(transform.forward.x, gravity, transform.forward.z);
 			controller.Move(moveDirection * moveSpeed * moveFactor * Time.deltaTime);
-			BroadcastMessage("PlayMassaRun");
 		}
 		if (Input.GetKey(KeyCode.S)) {
 			moveFactor = moveBackwardFactor;
 			moveDirection = Vector3(-transform.forward.x, gravity, -transform.forward.z);
 			controller.Move(moveDirection * moveSpeed * moveFactor * Time.deltaTime);
-			BroadcastMessage("PlayMassaRun");
 		}
 		if (Input.GetKey(KeyCode.D)) {
 			moveFactor = moveSidewaysFactor;
 			moveDirection = Vector3(transform.right.x, gravity, transform.right.z);
 			controller.Move(moveDirection * moveSpeed * moveFactor * Time.deltaTime);
-			BroadcastMessage("PlayMassaRun");
 		}
 		if (Input.GetKey(KeyCode.A)) {
 			moveFactor = moveSidewaysFactor;
 			moveDirection = Vector3(-transform.right.x, gravity, -transform.right.z);
 			controller.Move(moveDirection * moveSpeed * moveFactor * Time.deltaTime);
-			BroadcastMessage("PlayMassaRun");
-		}
-		else if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A)) {
-			BroadcastMessage("PlayMassaIdle");
 		}
 	}
 	
@@ -155,6 +145,105 @@ function Update () {
 				}
 			}
 		}
+		
+		if (playerTransformation == 1) {
+			if (Input.GetMouseButtonDown(0)) {
+				if (Input.GetKey(KeyCode.W)) {
+					attackFactorL0 = attackForwardFactorL0;
+					moveDirection = Vector3(transform.forward.x, gravity, transform.forward.z);
+					AttackWindupPhaseL0();
+				}
+				else if (Input.GetKey(KeyCode.S)) {
+					attackFactorL0 = attackBackwardFactorL0;
+					moveDirection = Vector3(-transform.forward.x, gravity, -transform.forward.z);
+					AttackWindupPhaseL0();
+				}
+				else if (Input.GetKey(KeyCode.D)) {
+					attackFactorL0 = attackSidewaysFactorL0;
+					moveDirection = Vector3(transform.right.x, gravity, transform.right.z);
+					AttackWindupPhaseL0();
+				}
+				else if (Input.GetKey(KeyCode.A)) {
+					attackFactorL0 = attackSidewaysFactorL0;
+					moveDirection = Vector3(-transform.right.x, gravity, -transform.right.z);
+					AttackWindupPhaseL0();
+				}
+				else {
+					attackFactorL0 = attackForwardFactorL0;
+					moveDirection = Vector3(transform.forward.x, gravity, transform.forward.z);
+					AttackWindupPhaseL0();
+				}
+			}
+			if (Input.GetMouseButtonDown(1)) {
+				GetComponentInChildren(ChocolateTruffle).StickyTruffle();
+			}
+		}
+		
+		if (playerTransformation == 2) {
+			if (Input.GetMouseButtonDown(0)) {
+				if (Input.GetKey(KeyCode.W)) {
+					attackFactorL0 = attackForwardFactorL0;
+					moveDirection = Vector3(transform.forward.x, gravity, transform.forward.z);
+					AttackWindupPhaseL0();
+				}
+				else if (Input.GetKey(KeyCode.S)) {
+					attackFactorL0 = attackBackwardFactorL0;
+					moveDirection = Vector3(-transform.forward.x, gravity, -transform.forward.z);
+					AttackWindupPhaseL0();
+				}
+				else if (Input.GetKey(KeyCode.D)) {
+					attackFactorL0 = attackSidewaysFactorL0;
+					moveDirection = Vector3(transform.right.x, gravity, transform.right.z);
+					AttackWindupPhaseL0();
+				}
+				else if (Input.GetKey(KeyCode.A)) {
+					attackFactorL0 = attackSidewaysFactorL0;
+					moveDirection = Vector3(-transform.right.x, gravity, -transform.right.z);
+					AttackWindupPhaseL0();
+				}
+				else {
+					attackFactorL0 = attackForwardFactorL0;
+					moveDirection = Vector3(transform.forward.x, gravity, transform.forward.z);
+					AttackWindupPhaseL0();
+				}
+			}
+			if (Input.GetMouseButtonDown(1)) {
+				GetComponentInChildren(StickySlide).StickySlide();
+			}
+		}
+		
+		if (playerTransformation == 3) {
+			if (Input.GetMouseButtonDown(0)) {
+				if (Input.GetKey(KeyCode.W)) {
+					attackFactorL0 = attackForwardFactorL0;
+					moveDirection = Vector3(transform.forward.x, gravity, transform.forward.z);
+					AttackWindupPhaseL0();
+				}
+				else if (Input.GetKey(KeyCode.S)) {
+					attackFactorL0 = attackBackwardFactorL0;
+					moveDirection = Vector3(-transform.forward.x, gravity, -transform.forward.z);
+					AttackWindupPhaseL0();
+				}
+				else if (Input.GetKey(KeyCode.D)) {
+					attackFactorL0 = attackSidewaysFactorL0;
+					moveDirection = Vector3(transform.right.x, gravity, transform.right.z);
+					AttackWindupPhaseL0();
+				}
+				else if (Input.GetKey(KeyCode.A)) {
+					attackFactorL0 = attackSidewaysFactorL0;
+					moveDirection = Vector3(-transform.right.x, gravity, -transform.right.z);
+					AttackWindupPhaseL0();
+				}
+				else {
+					attackFactorL0 = attackForwardFactorL0;
+					moveDirection = Vector3(transform.forward.x, gravity, transform.forward.z);
+					AttackWindupPhaseL0();
+				}
+			}
+			if (Input.GetMouseButtonDown(1)) {
+				GetComponentInChildren(SweetFrost).SweetFrost();
+			}
+		}
 	}
 	
 	if (attackingL0 == true) {
@@ -198,14 +287,6 @@ function Update () {
 	if (ableToSpecial == true) {
 		
 	}
-	
-	if (amIDead == true) {
-		AbleToMove(false);
-		AbleToAttack(false);
-		AbleToDodge(false);
-		AbleToSpecial(false);
-		AbleToRotate(false);
-	}
 }
 
 //Movement functions
@@ -213,15 +294,6 @@ function Update () {
 //Attack functions
 function AttackWindupPhaseL0 () {
 	CountCurrentHit();
-	if (currentHitL0 == 1) {
-		BroadcastMessage("PlayMassaAttack1");
-	}
-	if (currentHitL0 == 2) {
-		BroadcastMessage("PlayMassaAttack2");
-	}
-	if (currentHitL0 == 3) {
-		BroadcastMessage("PlayMassaAttack3");	
-	}
 	AbleToMove(false);
 	AbleToAttack(false);
 	AbleToDodge(false);
@@ -237,7 +309,6 @@ function AttackStrikingPhaseL0 () {
 	hitboxL0.velocity = transform.TransformDirection(Vector3(0, 0, baseAttackRangeL0));
 	hitboxL0.SendMessage("Damage", baseAttackDamageL0);
 	hitboxL0.SendMessage("Duration", baseAttackDurationL0);
-	hitboxL0.SendMessage("HitstunDuration", baseAttackHitstunDurationL0);
 	if (currentHitL0 == finalHitL0) {
 		hitboxL0.SendMessage("FinalHit");
 		currentHitL0 = 0;
@@ -271,7 +342,6 @@ function AttackStrikingPhaseR0 () {
 	hitboxR0.velocity = transform.TransformDirection(Vector3(0, 0, baseAttackRangeR0));
 	hitboxR0.SendMessage("Damage", baseAttackDamageR0);
 	hitboxR0.SendMessage("Duration", baseAttackDurationR0);
-	hitboxR0.SendMessage("HitstunDuration", baseAttackHitstunDurationR0);
 	Invoke("AttackCooldownPhaseR0", attackStrikingPeriodR0);
 }
 
@@ -295,7 +365,6 @@ function CountCurrentHit () {
 
 //Dodge functions
 function DodgeWindupPhase () {
-	BroadcastMessage("PlayMassaDodge");
 	AbleToMove(false);
 	AbleToAttack(false);
 	AbleToDodge(false);
@@ -328,9 +397,7 @@ function DodgeEndPhase () {
 
 
 //Health functions
-function HitstunImmobilizationPhase(hitstunDuration : float) {
-	BroadcastMessage("PlayMassaRecoil");
-	CancelInvoke("HitstunRecoveryPhase");
+function HitstunImmobilizationPhase() {
 	AbleToMove(false);
 	AbleToAttack(false);
 	AbleToDodge(false);
@@ -345,10 +412,6 @@ function HitstunRecoveryPhase () {
 	AbleToDodge(true);
 	AbleToSpecial(true);	
 	AbleToRotate(true);
-}
-
-function PlayDeath () {
-	amIDead = true;
 }
 
 //Boolean controllers

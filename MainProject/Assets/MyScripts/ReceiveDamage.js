@@ -13,16 +13,19 @@ function Start () {
 	currentHealth = maximumHealth;
 }
 
-function ApplyDamage (damage : int) {
-	currentHealth -= damage;
+function Update () {
 	if (currentHealth <= 0) {
 		KillSelf();
 	}
 }
 
+function ApplyDamage (damage : int) {
+	currentHealth -= damage;
+}
+
 function KillSelf() {
-	BroadcastMessage("PlayCCGDeath");
 	DropCandy();
+	Destroy(gameObject);
 }
 
 function DropCandy() {

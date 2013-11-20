@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyScripts\WorldMapScript.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MiscScripts/TitleScript.js">
     <Files>
-      <File FileName="Assets\MyScripts\WorldMapScript.js" Line="11" Column="28" />
+      <File FileName="Assets/MiscScripts/TitleScript.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

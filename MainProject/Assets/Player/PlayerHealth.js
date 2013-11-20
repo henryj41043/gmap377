@@ -1,13 +1,18 @@
 ﻿public static var maxHealth : int = 10;
 private var curHealth : int;
 var heartGUI:GUITexture;
-private var Xstart:float = 0.18; //-0.138
+private var Xstart:float = -0.138;
 private var spacingX:float;
-private var spacingY:float = 0.0; //0.63
-private var Xinterval:float = 0.028;
+private var spacingY:float = 0.63;
+private var Xinterval:float = 0.055;
 private var hearts = new Array();
 
 function Start () {
+	/*
+	//add para here for testing
+	maxHealth = OnStartGame.paraArray[3];
+	//
+	*/
 	curHealth = maxHealth;
 	AddHearts();
 }
@@ -30,23 +35,21 @@ function AddHearts(){
 
 function ApplyDamage (damage : int) {
 	if(curHealth <= 0){
-		Die();
 		return;
 	}
 	
-	ModifyHearts(damage);	
+	ModifyHearts(damage);
+	
+	if(curHealth <= 0){
+		Die();
+	}	
 }
 
 private var windowRect : Rect;
 	
 function Die () {
-	BroadcastMessage("PlayDeath");
-	SendMessage("AbleToMove", false);
-	SendMessage("AbleToAttack", false);
-	SendMessage("AbleToDodge", false);
-	SendMessage("AbleToSpecial", false);
-	SendMessage("AbleToRotate", false);
-	Application.LoadLevel(1);
+	BroadcastMessage("PlayMassaDeath");
+	//Destroy(this.gameObject);
 }
 
 function ModifyHearts(lostHearts : int){

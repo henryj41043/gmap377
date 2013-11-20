@@ -4,7 +4,6 @@ var specialAttackReady : int;
 var MassaAnimation : GameObject;
 
 function Update () {
-	/*
 	if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1)) {
 		SendMessageUpwards("MeltingPot");
 		MassaAnimation.SendMessage("PlaySpecialAttack");
@@ -96,7 +95,6 @@ function Update () {
 		MassaAnimation.SendMessage("PlaySpecialAttack");
 		specialAttackReady = 0;
 	}
-	*/
 }
 
 function SpecialAttackReady (receivedSpecialAttack : int) {

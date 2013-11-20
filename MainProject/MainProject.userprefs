@@ -1,8 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MyScripts\WorldMapScript.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Enemies\CCG\CCGAnimation.js">
     <Files>
-      <File FileName="Assets\MyScripts\WorldMapScript.js" Line="11" Column="28" />
+      <File FileName="Assets\Enemies\CCG\CCGAnimation.js" Line="34" Column="4" />
+      <File FileName="Assets\Enemies\PPM\MinerAnimation.js" Line="15" Column="3" />
+      <File FileName="Assets\Player\MassaAnimation.js" Line="16" Column="3" />
+      <File FileName="Assets\Enemies\Gent\GentAnimation.js" Line="13" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
